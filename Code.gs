@@ -1,6 +1,6 @@
 /**
  * ============================================================================
- *  SSHT 2026 — Symposium registration & poster backend
+ *  ISSEA26 — Symposium registration & poster backend
  *  International Symposium on Sustainable Energy Applications
  *  of Advanced Solar and Hydrogen Technologies
  *  National Chung Hsing University · 5 November 2026
@@ -40,8 +40,8 @@ const CONFIG = {
 
   // ---- Contact ----------------------------------------------------------
   // Shown in emails as the address people should reply to.
-  CONTACT_NAME: 'SSHT 2026 Organising Committee',
-  CONTACT_EMAIL: 'CHANGE_ME@nchu.edu.tw',
+  CONTACT_NAME: 'ISSEA26 Organising Committee',
+  CONTACT_EMAIL: 'isseaconference@gmail.com',
 
   // ---- Email ------------------------------------------------------------
   SEND_EMAIL: true,   // set false to stop auto-replies (data is still saved)
@@ -57,16 +57,16 @@ const POSTER_SHEET = 'Posters';
 
 const REG_HEADERS = [
   'Timestamp', 'Status', 'Source', 'Full name (EN)', 'Chinese name', 'Email',
-  'Affiliation', 'Department / Lab', 'Position', 'Mobile',
-  'Dietary', 'Dietary detail', 'Certificate', 'Photo consent',
+  'Affiliation', 'Department / Lab', 'Position',
+  'Dietary', 'Dietary detail', 'Photo consent',
   'Data consent', 'Heard from'
 ];
 
 const POSTER_HEADERS = [
   'Timestamp', 'Status', 'Poster no.', 'Presenting author (EN)', 'Chinese name', 'Email',
   'Affiliation', 'Department / Lab', 'Position', 'Mobile', 'Advisor / PI',
-  'Poster title', 'Co-authors', 'Abstract', 'Words', 'Topic', 'Keywords',
-  'Award entry', 'A0 confirmed', 'Publish consent'
+  'Poster title', 'Co-authors', 'Abstract', 'Words',
+  'A0 confirmed', 'Publish consent'
 ];
 
 /* ------------------------------ ROUTING ----------------------------------- */
@@ -139,7 +139,7 @@ function handleRegister(d) {
 
   const missing = requireFields(d, [
     'fullName', 'email', 'affiliation', 'department',
-    'position', 'mobile', 'dietary', 'certificate'
+    'position', 'dietary'
   ]);
   if (missing) return { ok: false, error: 'Missing required field: ' + missing };
 
@@ -165,8 +165,8 @@ function handleRegister(d) {
   sheet(REG_SHEET, REG_HEADERS).appendRow([
     new Date(), status, 'Registration form',
     clean(d.fullName), clean(d.chineseName), email,
-    clean(d.affiliation), clean(d.department), clean(d.position), clean(d.mobile),
-    clean(d.dietary), clean(d.dietaryDetail), clean(d.certificate),
+    clean(d.affiliation), clean(d.department), clean(d.position),
+    clean(d.dietary), clean(d.dietaryDetail),
     d.photoConsent ? 'Yes' : 'No', d.dataConsent ? 'Yes' : 'No',
     clean(d.heardFrom)
   ]);
@@ -192,8 +192,7 @@ function handlePoster(d) {
 
   const missing = requireFields(d, [
     'fullName', 'email', 'affiliation', 'department', 'position', 'mobile',
-    'advisor', 'title', 'abstract', 'topic', 'keywords',
-    'dietary', 'certificate'
+    'advisor', 'title', 'abstract', 'dietary'
   ]);
   if (missing) return { ok: false, error: 'Missing required field: ' + missing };
 
@@ -225,8 +224,6 @@ function handlePoster(d) {
     clean(d.fullName), clean(d.chineseName), email,
     clean(d.affiliation), clean(d.department), clean(d.position), clean(d.mobile),
     clean(d.advisor), clean(d.title), clean(d.coAuthors), clean(d.abstract), words,
-    clean(d.topic), clean(d.keywords),
-    d.awardEntry ? 'Yes' : 'No',
     'Yes', 'Yes'
   ]);
 
@@ -241,8 +238,8 @@ function handlePoster(d) {
     sheet(REG_SHEET, REG_HEADERS).appendRow([
       new Date(), regStatus, 'Poster form',
       clean(d.fullName), clean(d.chineseName), email,
-      clean(d.affiliation), clean(d.department), clean(d.position), clean(d.mobile),
-      clean(d.dietary), clean(d.dietaryDetail), clean(d.certificate),
+      clean(d.affiliation), clean(d.department), clean(d.position),
+      clean(d.dietary), clean(d.dietaryDetail),
       'Yes', 'Yes', ''
     ]);
   }
@@ -251,7 +248,6 @@ function handlePoster(d) {
     sendSafely(email, clean(d.fullName), regStatus, {
       status: posterStatus,
       title: clean(d.title),
-      topic: clean(d.topic),
       number: posterNo
     });
   }
@@ -281,11 +277,11 @@ function sendConfirmation(email, name, regStatus, poster) {
   const waitlisted = regStatus === 'Waitlist';
   const subject = poster
     ? (poster.status === 'Waitlist'
-        ? 'Poster received (waitlist) — SSHT 2026'
-        : 'Poster accepted — SSHT 2026')
+        ? 'Poster received (waitlist) — ISSEA26'
+        : 'Poster accepted — ISSEA26')
     : (waitlisted
-        ? 'Registration received (waitlist) — SSHT 2026'
-        : 'Registration confirmed — SSHT 2026');
+        ? 'Registration received (waitlist) — ISSEA26'
+        : 'Registration confirmed — ISSEA26');
 
   let body = '';
   body += '<div style="font-family:Georgia,serif;font-size:15px;line-height:1.6;color:#14302a;max-width:620px">';
@@ -301,8 +297,7 @@ function sendConfirmation(email, name, regStatus, poster) {
               'We will contact you if a place opens up.</p>';
       body += '<p>';
     }
-    body += '<b>Title:</b> ' + escapeHtml(poster.title) + '<br>';
-    body += '<b>Topic:</b> ' + escapeHtml(poster.topic) + '</p>';
+    body += '<b>Title:</b> ' + escapeHtml(poster.title) + '</p>';
     body += '<p>Please bring your poster printed at <b>A0 portrait</b> (841 × 1189 mm). ' +
             'Boards and mounting materials will be provided on the day.</p>';
 
@@ -492,7 +487,7 @@ function promoteFromWaitlist() {
 /** Adds an admin menu to the spreadsheet. */
 function onOpen() {
   SpreadsheetApp.getUi()
-    .createMenu('SSHT 2026')
+    .createMenu('ISSEA26')
     .addItem('Run setup', 'setup')
     .addItem('Promote from waitlist', 'promoteFromWaitlist')
     .addToUi();

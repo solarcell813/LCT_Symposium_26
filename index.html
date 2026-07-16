@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SSHT 2026 — International Symposium on Sustainable Energy Applications of Advanced Solar and Hydrogen Technologies</title>
+<title>ISSEA26 — International Symposium on Sustainable Energy Applications of Advanced Solar and Hydrogen Technologies</title>
 <meta name="description" content="A one-day international symposium at National Chung Hsing University, Taichung — 5 November 2026." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -237,7 +237,7 @@
 <body>
 
 <header class="nav" id="nav">
-  <a class="brand" href="#top"><b>SSHT</b><span>NCHU 2026</span></a>
+  <a class="brand" href="#top"><b>ISSEA26</b><span>NCHU 2026</span></a>
   <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="links" id="links">
     <a href="#about">About</a>
@@ -474,10 +474,6 @@
             <input type="email" id="r_email" name="email" autocomplete="email" />
             <span class="hint">Your confirmation will be sent here.</span></div>
 
-          <div class="f"><label for="r_mobile">Mobile phone<span class="req">*</span></label>
-            <input type="tel" id="r_mobile" name="mobile" autocomplete="tel" />
-            <span class="hint">Used only to reach you on the day.</span></div>
-
           <div class="f"><label for="r_aff">Affiliation / Institution<span class="req">*</span></label>
             <input type="text" id="r_aff" name="affiliation" autocomplete="organization" /></div>
 
@@ -508,13 +504,6 @@
           <div class="f wide" id="r_dietWrap" hidden><label for="r_dietDetail">Please specify</label>
             <input type="text" id="r_dietDetail" name="dietaryDetail" />
             <span class="hint">Allergies or anything else the caterer should know.</span></div>
-
-          <div class="f"><label for="r_cert">Certificate of attendance<span class="req">*</span></label>
-            <select id="r_cert" name="certificate">
-              <option value="">Please choose…</option>
-              <option>Yes, please</option>
-              <option>Not needed</option>
-            </select></div>
 
           <div class="f"><label for="r_heard">How did you hear about this event?</label>
             <select id="r_heard" name="heardFrom">
@@ -579,8 +568,7 @@
               <option>Faculty</option>
               <option>Industry</option>
               <option>Other</option>
-            </select>
-            <span class="hint">Only students are eligible for the poster award.</span></div>
+            </select></div>
 
           <div class="f"><label for="p_adv">Advisor / PI<span class="req">*</span></label>
             <input type="text" id="p_adv" name="advisor" /></div>
@@ -599,19 +587,6 @@
             <span class="hint">Plain text, 250 words maximum. This will be printed in the programme booklet exactly as submitted.</span>
           </div>
 
-          <div class="f"><label for="p_topic">Topic<span class="req">*</span></label>
-            <select id="p_topic" name="topic">
-              <option value="">Please choose…</option>
-              <option>Advanced Solar Cells</option>
-              <option>Photophysics &amp; Interfaces</option>
-              <option>Solar Fuels &amp; Hydrogen</option>
-              <option>Devices Beyond Solar</option>
-            </select></div>
-
-          <div class="f"><label for="p_kw">Keywords<span class="req">*</span></label>
-            <input type="text" id="p_kw" name="keywords" />
-            <span class="hint">Three to five, separated by commas.</span></div>
-
           <div class="f"><label for="p_diet">Dietary requirements<span class="req">*</span></label>
             <select id="p_diet" name="dietary">
               <option value="">Please choose…</option>
@@ -621,19 +596,10 @@
               <option>Other</option>
             </select></div>
 
-          <div class="f"><label for="p_cert">Certificate of attendance<span class="req">*</span></label>
-            <select id="p_cert" name="certificate">
-              <option value="">Please choose…</option>
-              <option>Yes, please</option>
-              <option>Not needed</option>
-            </select></div>
-
           <div class="f wide" id="p_dietWrap" hidden><label for="p_dietDetail">Please specify</label>
             <input type="text" id="p_dietDetail" name="dietaryDetail" /></div>
 
           <div class="checks">
-            <label class="chk"><input type="checkbox" id="p_award" />
-              <span>I would like to enter the poster award (students only).</span></label>
             <label class="chk"><input type="checkbox" id="p_size" />
               <span>I confirm my poster will be printed at <b>A0 portrait</b> (841 × 1189 mm). Boards and mounting materials are provided.<span class="req"> *</span></span></label>
             <label class="chk"><input type="checkbox" id="p_pub" />
@@ -683,7 +649,7 @@
 </section>
 
 <footer>
-  <div class="fbrand">Sustainable Solar &amp; Hydrogen Technologies</div>
+  <div class="fbrand">ISSEA26</div>
   <div class="fsmall">National Chung Hsing University · Taichung · 5 November 2026</div>
 </footer>
 
@@ -828,7 +794,7 @@ document.getElementById('formReg').addEventListener('submit', function(ev){
   }
 
   var bad = validate(
-    ['r_name','r_email','r_mobile','r_aff','r_dept','r_pos','r_diet','r_cert'],
+    ['r_name','r_email','r_aff','r_dept','r_pos','r_diet'],
     ['r_photo','r_data']
   );
   if(bad){
@@ -843,9 +809,9 @@ document.getElementById('formReg').addEventListener('submit', function(ev){
   post({
     action:'register',
     fullName: val('r_name'), chineseName: val('r_cn'), email: val('r_email'),
-    mobile: val('r_mobile'), affiliation: val('r_aff'), department: val('r_dept'),
+    affiliation: val('r_aff'), department: val('r_dept'),
     position: val('r_pos'), dietary: val('r_diet'), dietaryDetail: val('r_dietDetail'),
-    certificate: val('r_cert'), heardFrom: val('r_heard'),
+    heardFrom: val('r_heard'),
     photoConsent: true, dataConsent: true
   }).then(function(d){
     if(!d.ok){ note('msgReg','err', d.error || 'Something went wrong. Please try again.'); return; }
@@ -884,7 +850,7 @@ document.getElementById('formPos').addEventListener('submit', function(ev){
   }
 
   var bad = validate(
-    ['p_name','p_email','p_mobile','p_aff','p_dept','p_pos','p_adv','p_title','p_abs','p_topic','p_kw','p_diet','p_cert'],
+    ['p_name','p_email','p_mobile','p_aff','p_dept','p_pos','p_adv','p_title','p_abs','p_diet'],
     ['p_size','p_pub','p_photo','p_data']
   );
   if(bad){
@@ -906,10 +872,8 @@ document.getElementById('formPos').addEventListener('submit', function(ev){
     fullName: val('p_name'), chineseName: val('p_cn'), email: val('p_email'),
     mobile: val('p_mobile'), affiliation: val('p_aff'), department: val('p_dept'),
     position: val('p_pos'), advisor: val('p_adv'), title: val('p_title'),
-    coAuthors: val('p_co'), abstract: val('p_abs'), topic: val('p_topic'),
-    keywords: val('p_kw'), dietary: val('p_diet'), dietaryDetail: val('p_dietDetail'),
-    certificate: val('p_cert'),
-    awardEntry: checked('p_award'),
+    coAuthors: val('p_co'), abstract: val('p_abs'),
+    dietary: val('p_diet'), dietaryDetail: val('p_dietDetail'),
     sizeConfirmed: true, publishConsent: true, photoConsent: true, dataConsent: true
   }).then(function(d){
     if(!d.ok){ note('msgPos','err', d.error || 'Something went wrong. Please try again.'); return; }

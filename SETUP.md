@@ -1,4 +1,4 @@
-# SSHT 2026 — Setting up the forms
+# ISSEA26 — Setting up the forms
 
 Two files do the work:
 
@@ -13,7 +13,7 @@ You need to do this once. Budget about ten minutes.
 ## 1. Create the spreadsheet
 
 1. Go to <https://sheets.new> — this makes a new, empty Google Sheet.
-2. Name it something like **SSHT 2026 — Registrations**.
+2. Name it something like **ISSEA26 — Registrations**.
 3. Leave it open.
 
 ## 2. Install the backend
@@ -21,14 +21,14 @@ You need to do this once. Budget about ten minutes.
 1. In that sheet: **Extensions → Apps Script**. A code editor opens in a new tab.
 2. Delete whatever is in `Code.gs` (usually an empty `myFunction`).
 3. Paste in the entire contents of the `Code.gs` file I gave you.
-4. Near the top you'll find the `CONFIG` block. **Change this one line:**
+4. Near the top you'll find the `CONFIG` block. It already points replies to
 
    ```js
-   CONTACT_EMAIL: 'CHANGE_ME@nchu.edu.tw',
+   CONTACT_EMAIL: 'isseaconference@gmail.com',
    ```
 
-   to the address you want people to reply to. Everything else already has a
-   sensible value.
+   Change this line if you want a different reply-to address. Everything else
+   already has a sensible value.
 
 5. Click the **save** icon (💾).
 
@@ -51,7 +51,7 @@ You need to do this once. Budget about ten minutes.
 1. Back in the Apps Script editor: **Deploy → New deployment**.
 2. Click the gear icon next to *Select type* → choose **Web app**.
 3. Fill in:
-   - **Description:** `SSHT 2026 forms`
+   - **Description:** `ISSEA26 forms`
    - **Execute as:** **Me** ← important
    - **Who has access:** **Anyone** ← important, and it does *not* mean anyone
      can see your spreadsheet. It only means anyone can submit the form.
@@ -109,7 +109,7 @@ person's Status to `Cancelled` — don't delete the row, you'll want the record.
 
 ### When someone cancels
 
-The spreadsheet has an **SSHT 2026** menu (reload the sheet if you don't see it):
+The spreadsheet has an **ISSEA26** menu (reload the sheet if you don't see it):
 
 - **Promote from waitlist** — moves the longest-waiting person to `Confirmed`.
   It tells you who, so you can email them. It refuses if you're still at the cap.
@@ -162,7 +162,6 @@ locally to test; the form talks to Apps Script over HTTPS either way.
 
 ## Still to do
 
-- Fill in `CONTACT_EMAIL` in `Code.gs`.
 - Fill in `ENDPOINT` in `index.html`.
 - Decide the two deadlines.
 - Confirm Benjamin Moss's affiliation, Thomas Anthopoulos's affiliation
