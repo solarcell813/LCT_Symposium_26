@@ -3,160 +3,75 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>International Symposium on Sustainable Energy — Advanced Solar &amp; Hydrogen Technologies</title>
+<title>SSHT 2026 — International Symposium on Sustainable Energy Applications of Advanced Solar and Hydrogen Technologies</title>
+<meta name="description" content="A one-day international symposium at National Chung Hsing University, Taichung — 5 November 2026." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+TC:wght@500;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --bg-0:#14302a;
-    --bg-1:#183a33;
-    --bg-2:#0d211d;
-    --mist:#9fb3aa;
-    --paper:#f0ece1;
-    --paper-dim:rgba(240,236,225,.72);
-    --gold:#e3a42c;
-    --gold-2:#f2c264;
-    --line:rgba(159,179,170,.18);
-    --line-strong:rgba(159,179,170,.34);
+    --bg-0:#14302a; --bg-1:#183a33; --bg-2:#0d211d;
+    --mist:#9fb3aa; --paper:#f0ece1; --paper-dim:rgba(240,236,225,.72);
+    --gold:#e3a42c; --gold-2:#f2c264;
+    --line:rgba(159,179,170,.18); --line-strong:rgba(159,179,170,.34);
+    --err:#e0765f; --ok:#7fc99a;
     --serif-en:"EB Garamond",Georgia,serif;
     --display:"Cormorant Garamond",Georgia,serif;
     --caps:"Cinzel",Georgia,serif;
-    --han:"Noto Serif TC","EB Garamond",serif;
+    --han:"Noto Serif TC",serif;
   }
-
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-
-  body{
-    background:var(--bg-0);
-    color:var(--paper);
-    font-family:var(--serif-en);
-    font-size:18px;
-    line-height:1.65;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
-
-  .han{font-family:var(--han)}
+  body{background:var(--bg-0);color:var(--paper);font-family:var(--serif-en);font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
 
-  /* ---------- shared section frame ---------- */
   .section{position:relative;max-width:1180px;margin:0 auto;padding:118px 40px}
-  .eyebrow{
-    font-family:var(--caps);
-    font-size:.72rem;
-    letter-spacing:.34em;
-    text-transform:uppercase;
-    color:var(--gold);
-    display:flex;align-items:center;gap:16px;
-    margin-bottom:26px;
-  }
+  .eyebrow{font-family:var(--caps);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:16px;margin-bottom:26px}
   .eyebrow::before{content:"";width:34px;height:1px;background:var(--gold);opacity:.7}
-  .section-title{
-    font-family:var(--display);
-    font-weight:600;
-    font-size:clamp(2.1rem,4.6vw,3.4rem);
-    line-height:1.08;
-    letter-spacing:.01em;
-    margin-bottom:14px;
-  }
-  .section-lead{
-    max-width:640px;
-    color:var(--paper-dim);
-    font-size:1.12rem;
-  }
+  .section-title{font-family:var(--display);font-weight:600;font-size:clamp(2.1rem,4.6vw,3.4rem);line-height:1.08;margin-bottom:14px}
+  .section-lead{max-width:640px;color:var(--paper-dim);font-size:1.12rem}
 
-  /* ---------- nav ---------- */
-  header.nav{
-    position:fixed;top:0;left:0;right:0;z-index:50;
-    display:flex;align-items:center;justify-content:space-between;
-    padding:20px 40px;
-    transition:background .4s ease,padding .4s ease,border-color .4s ease;
-    border-bottom:1px solid transparent;
-  }
-  header.nav.solid{
-    background:rgba(13,33,29,.86);
-    backdrop-filter:blur(10px);
-    padding:14px 40px;
-    border-bottom:1px solid var(--line);
-  }
+  /* nav */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent}
+  header.nav.solid{background:rgba(13,33,29,.86);backdrop-filter:blur(10px);padding:14px 40px;border-bottom:1px solid var(--line)}
   .brand{display:flex;align-items:baseline;gap:12px;font-family:var(--caps);letter-spacing:.2em;font-size:.82rem;text-transform:uppercase}
   .brand b{color:var(--gold);font-weight:600}
-  .brand span{color:var(--paper-dim);font-size:.72rem;letter-spacing:.16em}
+  .brand span{color:var(--paper-dim);font-size:.68rem;letter-spacing:.16em}
   nav.links{display:flex;align-items:center;gap:30px}
-  nav.links a{
-    font-family:var(--caps);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
-    color:var(--paper-dim);transition:color .25s;
-  }
+  nav.links a{font-family:var(--caps);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--paper-dim);transition:color .25s}
   nav.links a:hover,nav.links a:focus-visible{color:var(--paper)}
-  .pill{
-    font-family:var(--caps);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--bg-2);background:var(--gold);
-    padding:9px 18px;border-radius:2px;transition:background .25s,transform .25s;
-  }
+  .pill{font-family:var(--caps);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--bg-2);background:var(--gold);padding:9px 18px;border-radius:2px;transition:background .25s,transform .25s}
   .pill:hover,.pill:focus-visible{background:var(--gold-2);transform:translateY(-1px)}
   .menu-btn{display:none}
 
-  /* ---------- hero ---------- */
+  /* hero */
   .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
-  .hero-wedge{
-    position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(133deg,transparent 56%,rgba(169,184,176,.16) 56.4%,rgba(169,184,176,.05) 74%,transparent 82%);
-  }
+  .hero-wedge{position:absolute;inset:0;pointer-events:none;background:linear-gradient(133deg,transparent 56%,rgba(169,184,176,.16) 56.4%,rgba(169,184,176,.05) 74%,transparent 82%)}
   .hero-lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.55}
-  .hero-inner{
-    position:relative;z-index:2;max-width:1180px;margin:0 auto;width:100%;
-    padding:140px 40px 90px;
-    display:grid;grid-template-columns:1.55fr .95fr;gap:60px;align-items:center;
-  }
-  .hero-eyebrow{
-    font-family:var(--caps);font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:30px;
-  }
-  .hero h1{
-    font-family:var(--han);font-weight:500;
-    font-size:clamp(2.05rem,4.4vw,3.35rem);
-    line-height:1.34;letter-spacing:.03em;
-    text-shadow:0 2px 30px rgba(0,0,0,.25);
-  }
-  .hero h1 .en{
-    display:block;margin-top:26px;
-    font-family:var(--display);font-weight:500;font-style:italic;
-    font-size:clamp(1.2rem,2.3vw,1.7rem);
-    line-height:1.35;letter-spacing:.01em;color:var(--paper-dim);
-  }
+  .hero-inner{position:relative;z-index:2;max-width:1180px;margin:0 auto;width:100%;padding:140px 40px 90px;display:grid;grid-template-columns:1.55fr .95fr;gap:60px;align-items:center}
+  .hero-eyebrow{font-family:var(--caps);font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:30px}
+  .hero h1{font-family:var(--han);font-weight:500;font-size:clamp(2rem,4.3vw,3.3rem);line-height:1.34;letter-spacing:.03em;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+  .hero h1 .en{display:block;margin-top:26px;font-family:var(--display);font-weight:500;font-style:italic;font-size:clamp(1.2rem,2.3vw,1.7rem);line-height:1.35;color:var(--paper-dim)}
   .hero-meta{margin-top:38px;display:flex;flex-wrap:wrap;gap:14px}
-  .ghost{
-    font-family:var(--caps);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;
-    padding:11px 22px;border:1px solid var(--line-strong);border-radius:2px;
-    color:var(--paper);transition:border-color .25s,color .25s;
-  }
+  .ghost{font-family:var(--caps);font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;padding:11px 22px;border:1px solid var(--line-strong);border-radius:2px;color:var(--paper);transition:border-color .25s,color .25s}
   .ghost:hover,.ghost:focus-visible{border-color:var(--gold);color:var(--gold)}
+  .ghost.solid{background:var(--gold);border-color:var(--gold);color:var(--bg-2)}
+  .ghost.solid:hover,.ghost.solid:focus-visible{background:var(--gold-2);border-color:var(--gold-2);color:var(--bg-2)}
 
-  /* date block, echoing the poster */
   .datecard{border-left:1px solid var(--line-strong);padding-left:34px}
   .datecard .yr{font-family:var(--caps);font-size:1.5rem;letter-spacing:.3em;color:var(--paper-dim)}
-  .datecard .day{
-    font-family:var(--caps);font-weight:700;
-    font-size:clamp(3.6rem,8vw,5.4rem);line-height:.98;letter-spacing:.04em;color:var(--paper);
-    margin:6px 0 2px;
-  }
+  .datecard .day{font-family:var(--caps);font-weight:700;font-size:clamp(3.6rem,8vw,5.4rem);line-height:.98;letter-spacing:.04em;margin:6px 0 2px}
   .datecard .mon{font-family:var(--caps);font-size:1.7rem;letter-spacing:.26em;color:var(--gold)}
   .datecard .sub{margin-top:20px;font-family:var(--display);font-style:italic;font-size:1.25rem;color:var(--paper-dim)}
-  .datecard .hrs{margin-top:2px;font-family:var(--caps);font-size:1rem;letter-spacing:.14em;color:var(--paper)}
+  .datecard .hrs{margin-top:2px;font-family:var(--caps);font-size:1rem;letter-spacing:.14em}
   .datecard .loc{margin-top:14px;font-family:var(--caps);font-size:.68rem;letter-spacing:.2em;color:var(--paper-dim)}
-  .scrollhint{
-    position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:2;
-    font-family:var(--caps);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--paper-dim);
-    display:flex;flex-direction:column;align-items:center;gap:8px;
-  }
+  .scrollhint{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:2;font-family:var(--caps);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--paper-dim);display:flex;flex-direction:column;align-items:center;gap:8px}
   .scrollhint .bar{width:1px;height:38px;background:linear-gradient(var(--gold),transparent);animation:drop 2.4s ease-in-out infinite}
   @keyframes drop{0%,100%{opacity:.3;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
   @media (prefers-reduced-motion:reduce){.scrollhint .bar{animation:none}}
 
-  /* ---------- about ---------- */
+  /* about */
   .about{background:var(--bg-1)}
   .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:54px}
   .theme{display:flex;gap:20px;align-items:flex-start}
@@ -165,98 +80,145 @@
   .theme p{color:var(--paper-dim);font-size:1.02rem}
   .theme + .theme{margin-top:34px}
 
-  /* ---------- speakers ---------- */
-  .spk-grid{
-    display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));
-    gap:16px 22px;margin-top:56px;
-  }
-  .spk{
-    position:relative;padding:34px 24px 30px;text-align:center;
-    border:1px solid var(--line);border-radius:3px;
-    background:linear-gradient(180deg,rgba(255,255,255,.015),transparent);
-    transition:transform .35s ease,border-color .35s ease,background .35s ease;
-  }
+  /* speakers */
+  .spk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:16px 22px;margin-top:56px}
+  .spk{position:relative;padding:34px 24px 30px;text-align:center;border:1px solid var(--line);border-radius:3px;background:linear-gradient(180deg,rgba(255,255,255,.015),transparent);transition:transform .35s,border-color .35s,background .35s}
   .spk:hover{transform:translateY(-6px);border-color:rgba(227,164,44,.5);background:rgba(255,255,255,.03)}
-  .mono{
-    width:92px;height:92px;margin:0 auto 20px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;
-    font-family:var(--display);font-weight:600;font-size:1.85rem;letter-spacing:.02em;
-    color:var(--paper);
-    background:
-      radial-gradient(circle at 32% 28%,rgba(242,194,100,.28),transparent 60%),
-      linear-gradient(150deg,#1f463d,#0f2621);
-    box-shadow:0 0 0 1px var(--line-strong),0 0 0 5px rgba(20,48,42,.6);
-    position:relative;
-  }
-  .mono::after{
-    content:"";position:absolute;inset:-5px;border-radius:50%;
-    border:1px solid transparent;transition:border-color .35s ease;
-  }
+  .mono{width:92px;height:92px;margin:0 auto 20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:600;font-size:1.85rem;background:radial-gradient(circle at 32% 28%,rgba(242,194,100,.28),transparent 60%),linear-gradient(150deg,#1f463d,#0f2621);box-shadow:0 0 0 1px var(--line-strong),0 0 0 5px rgba(20,48,42,.6);position:relative}
+  .mono::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid transparent;transition:border-color .35s}
   .spk:hover .mono::after{border-color:rgba(227,164,44,.6)}
   .spk .slotmark{font-family:var(--caps);font-size:.62rem;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
   .spk .slotmark.tbc{color:var(--mist)}
   .spk .name{font-family:var(--display);font-weight:600;font-size:1.32rem;line-height:1.2;margin:6px 0 8px}
-  .spk .inst{font-family:var(--serif-en);font-style:italic;font-size:.98rem;color:var(--paper-dim);line-height:1.35}
+  .spk .inst{font-style:italic;font-size:.98rem;color:var(--paper-dim);line-height:1.35}
   .spk .cty{display:block;margin-top:8px;font-family:var(--caps);font-size:.58rem;letter-spacing:.18em;color:var(--mist);text-transform:uppercase}
 
-  /* ---------- programme ---------- */
+  /* programme */
   .prog{background:var(--bg-2)}
   .runsheet{margin-top:54px;border-top:1px solid var(--line-strong)}
-  .slot{
-    display:grid;grid-template-columns:118px 1fr;gap:26px;
-    padding:22px 0;border-bottom:1px solid var(--line);
-    transition:background .3s ease;
-  }
+  .slot{display:grid;grid-template-columns:118px 1fr;gap:26px;padding:22px 0;border-bottom:1px solid var(--line);transition:background .3s}
   .slot:hover{background:rgba(255,255,255,.02)}
   .slot .time{font-family:var(--caps);font-size:.8rem;letter-spacing:.06em;color:var(--gold);padding-top:4px;white-space:nowrap}
   .slot .who{font-family:var(--display);font-weight:600;font-size:1.24rem;line-height:1.25}
-  .slot .aff{font-family:var(--serif-en);font-style:italic;font-size:.92rem;color:var(--mist);margin-top:2px}
+  .slot .aff{font-style:italic;font-size:.92rem;color:var(--mist);margin-top:2px}
   .slot .talk{margin-top:9px;font-size:1rem;color:var(--paper-dim);max-width:70ch;line-height:1.5}
   .slot.mark{border-bottom:1px solid var(--line-strong)}
   .slot.mark .time{color:var(--paper-dim)}
-  .slot.mark .who{font-family:var(--caps);font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--paper)}
+  .slot.mark .who{font-family:var(--caps);font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
   .slot.pause{padding:14px 0;background:rgba(255,255,255,.018)}
   .slot.pause .who{font-family:var(--caps);font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--mist)}
   .slot.pause .time{color:var(--mist)}
-  .slot.tbc .who{font-style:italic;font-weight:500;color:var(--mist)}
+  .slot .talk.tbc{font-style:italic;color:var(--mist)}
   .prog-note{margin-top:34px;font-size:.95rem;color:var(--paper-dim);font-style:italic;max-width:70ch}
 
-  /* ---------- venue ---------- */
+  /* ============ FORMS ============ */
+  .reg{background:var(--bg-1)}
+  .tabs{display:flex;gap:0;margin-top:52px;border-bottom:1px solid var(--line-strong)}
+  .tab{
+    flex:0 0 auto;background:none;border:0;cursor:pointer;color:var(--paper-dim);
+    font-family:var(--caps);font-size:.76rem;letter-spacing:.2em;text-transform:uppercase;
+    padding:16px 30px;position:relative;transition:color .3s;
+  }
+  .tab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .35s ease}
+  .tab[aria-selected="true"]{color:var(--paper)}
+  .tab[aria-selected="true"]::after{transform:scaleX(1)}
+  .tab:hover{color:var(--paper)}
+
+  .capbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:30px 0 6px}
+  .cap{
+    display:inline-flex;align-items:baseline;gap:10px;
+    border:1px solid var(--line-strong);border-radius:2px;padding:8px 16px;
+    font-family:var(--caps);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--paper-dim);
+  }
+  .cap b{font-family:var(--display);font-size:1.2rem;letter-spacing:0;color:var(--paper);font-weight:600}
+  .cap.full{border-color:rgba(224,118,95,.55);color:var(--err)}
+  .cap.full b{color:var(--err)}
+
+  .panel[hidden]{display:none}
+  form{margin-top:26px;max-width:840px}
+  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px 26px}
+  .f{display:flex;flex-direction:column;gap:7px}
+  .f.wide{grid-column:1/-1}
+  .f label{font-family:var(--caps);font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim)}
+  .f label .req{color:var(--gold);margin-left:3px}
+  .f .hint{font-size:.85rem;font-style:italic;color:var(--mist);line-height:1.4}
+  .f input[type=text],.f input[type=email],.f input[type=tel],.f select,.f textarea{
+    width:100%;background:rgba(13,33,29,.5);border:1px solid var(--line-strong);border-radius:2px;
+    color:var(--paper);font-family:var(--serif-en);font-size:1rem;padding:12px 14px;
+    transition:border-color .25s,background .25s;
+  }
+  .f textarea{resize:vertical;min-height:110px;line-height:1.55}
+  .f select{appearance:none;cursor:pointer;
+    background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%239fb3aa' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+  .f select option{background:var(--bg-2);color:var(--paper)}
+  .f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--gold);background:rgba(13,33,29,.8)}
+  .f input.bad,.f select.bad,.f textarea.bad{border-color:var(--err)}
+  .counter{align-self:flex-end;font-family:var(--caps);font-size:.62rem;letter-spacing:.14em;color:var(--mist)}
+  .counter.over{color:var(--err)}
+
+  .checks{grid-column:1/-1;display:flex;flex-direction:column;gap:14px;margin-top:6px;padding-top:24px;border-top:1px solid var(--line)}
+  .chk{display:flex;gap:13px;align-items:flex-start;cursor:pointer;font-size:.98rem;color:var(--paper-dim);line-height:1.5}
+  .chk input{
+    appearance:none;flex:0 0 auto;width:18px;height:18px;margin-top:3px;
+    border:1px solid var(--line-strong);border-radius:2px;background:rgba(13,33,29,.5);
+    cursor:pointer;position:relative;transition:border-color .2s,background .2s;
+  }
+  .chk input:checked{background:var(--gold);border-color:var(--gold)}
+  .chk input:checked::after{content:"";position:absolute;left:5px;top:1px;width:5px;height:10px;border:solid var(--bg-2);border-width:0 2px 2px 0;transform:rotate(45deg)}
+  .chk input.bad{border-color:var(--err)}
+  .chk .req{color:var(--gold)}
+
+  .actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:14px}
+  .submit{
+    font-family:var(--caps);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;
+    background:var(--gold);color:var(--bg-2);border:1px solid var(--gold);border-radius:2px;
+    padding:14px 34px;cursor:pointer;transition:background .25s,transform .2s,opacity .25s;
+  }
+  .submit:hover:not(:disabled){background:var(--gold-2);border-color:var(--gold-2);transform:translateY(-1px)}
+  .submit:disabled{opacity:.5;cursor:not-allowed}
+  .note{font-size:.9rem;font-style:italic;color:var(--mist)}
+
+  .msg{grid-column:1/-1;margin-top:4px;padding:16px 20px;border-radius:2px;font-size:1rem;line-height:1.55;display:none}
+  .msg.show{display:block}
+  .msg.err{background:rgba(224,118,95,.1);border:1px solid rgba(224,118,95,.45);color:#f3b3a4}
+  .msg.ok{background:rgba(127,201,154,.1);border:1px solid rgba(127,201,154,.4);color:#a8dcbc}
+  .msg.wait{background:rgba(227,164,44,.1);border:1px solid rgba(227,164,44,.45);color:var(--gold-2)}
+  .msg b{color:var(--paper)}
+
+  .done{text-align:center;padding:56px 24px;border:1px solid rgba(127,201,154,.35);border-radius:3px;background:rgba(127,201,154,.05)}
+  .done h3{font-family:var(--display);font-weight:600;font-size:2rem;margin-bottom:10px}
+  .done p{color:var(--paper-dim);max-width:52ch;margin:0 auto 6px}
+  .done .tick{font-size:2.2rem;color:var(--ok);margin-bottom:14px;line-height:1}
+
+  /* venue */
   .venue-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;margin-top:54px;align-items:start}
   .vcard h3{font-family:var(--display);font-weight:600;font-size:1.55rem;margin-bottom:10px}
   .vcard p{color:var(--paper-dim);margin-bottom:6px}
-  .vcard .han-addr{font-family:var(--han);color:var(--paper)}
   .hosts{border-left:1px solid var(--line-strong);padding-left:34px}
   .hosts h4{font-family:var(--caps);font-size:.68rem;letter-spacing:.22em;color:var(--gold);text-transform:uppercase;margin-bottom:16px}
   .hosts ul{list-style:none}
-  .hosts li{padding:8px 0;border-bottom:1px solid var(--line);font-size:1rem}
-  .hosts li .han{display:block;color:var(--paper)}
-  .hosts li small{color:var(--paper-dim);font-style:italic}
+  .hosts li{padding:9px 0;border-bottom:1px solid var(--line);font-size:1rem;color:var(--paper-dim)}
 
-  /* ---------- footer ---------- */
   footer{background:#0a1917;border-top:1px solid var(--line);padding:60px 40px 46px;text-align:center}
-  footer .fbrand{font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--paper)}
-  footer .fmeta{margin-top:12px;font-family:var(--han);font-size:.9rem;color:var(--paper-dim)}
-  footer .fsmall{margin-top:22px;font-family:var(--caps);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,236,225,.42)}
+  footer .fbrand{font-family:var(--display);font-style:italic;font-size:1.5rem}
+  footer .fsmall{margin-top:16px;font-family:var(--caps);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(240,236,225,.42)}
 
-  /* ---------- reveal ---------- */
-  .js-reveal .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+  .js-reveal .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}
   .js-reveal .reveal.in{opacity:1;transform:none}
-
   :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-  /* ---------- responsive ---------- */
   @media (max-width:880px){
     .hero-inner{grid-template-columns:1fr;gap:44px;padding-top:120px}
     .datecard{border-left:none;border-top:1px solid var(--line-strong);padding-left:0;padding-top:30px}
-    .about-grid,.venue-grid{grid-template-columns:1fr;gap:40px}
+    .about-grid,.venue-grid,.fgrid{grid-template-columns:1fr}
     .hosts{border-left:none;border-top:1px solid var(--line-strong);padding-left:0;padding-top:30px}
-    nav.links{
-      position:fixed;inset:0 0 0 auto;width:min(78vw,320px);
-      flex-direction:column;justify-content:center;gap:26px;
-      background:rgba(10,25,23,.97);backdrop-filter:blur(8px);
-      transform:translateX(100%);transition:transform .4s ease;padding:40px;
-    }
+    .tabs{border-bottom:none;flex-direction:column;gap:2px}
+    .tab{text-align:left;padding:14px 0;border-bottom:1px solid var(--line)}
+    .tab::after{display:none}
+    .tab[aria-selected="true"]{color:var(--gold);border-bottom-color:var(--gold)}
+    nav.links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);flex-direction:column;justify-content:center;gap:26px;background:rgba(10,25,23,.97);backdrop-filter:blur(8px);transform:translateX(100%);transition:transform .4s;padding:40px}
     nav.links.open{transform:none}
     .menu-btn{display:flex;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;z-index:60;padding:6px}
     .menu-btn span{width:24px;height:2px;background:var(--paper);transition:.3s}
@@ -275,14 +237,14 @@
 <body>
 
 <header class="nav" id="nav">
-  <a class="brand" href="#top"><b>SSHT</b><span>永續能源研討會</span></a>
+  <a class="brand" href="#top"><b>SSHT</b><span>NCHU 2026</span></a>
   <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
   <nav class="links" id="links">
     <a href="#about">About</a>
     <a href="#speakers">Speakers</a>
     <a href="#programme">Programme</a>
     <a href="#venue">Venue</a>
-    <a class="pill" href="#programme">View Programme</a>
+    <a class="pill" href="#register">Register</a>
   </nav>
 </header>
 
@@ -300,14 +262,14 @@
 
   <div class="hero-inner">
     <div>
-      <div class="hero-eyebrow">International Symposium · 國立中興大學</div>
-      <h1 class="han">
-        次世代太陽能電池與氫能技術<br>之永續能源應用研討會
+      <div class="hero-eyebrow">International Symposium · National Chung Hsing University</div>
+      <h1>
+        <span class="han">次世代太陽能電池與氫能技術<br>之永續能源應用研討會</span>
         <span class="en">International Symposium on Sustainable Energy Applications of Advanced Solar &amp; Hydrogen Technologies</span>
       </h1>
       <div class="hero-meta">
-        <a class="ghost" href="#programme">One Day · Twelve Talks</a>
-        <a class="ghost" href="#venue">National Chung Hsing University</a>
+        <a class="ghost solid" href="#register">Register &mdash; Free</a>
+        <a class="ghost" href="#programme">One Day · Thirteen Talks</a>
       </div>
     </div>
 
@@ -316,7 +278,7 @@
       <div class="day">05</div>
       <div class="mon">NOV.</div>
       <div class="sub">Thursday</div>
-      <div class="hrs">09:00 &ndash; 14:00</div>
+      <div class="hrs">09:00 &ndash; 15:00</div>
       <div class="loc">Taichung · Taiwan</div>
     </div>
   </div>
@@ -333,36 +295,24 @@
 
     <div class="about-grid">
       <div class="reveal">
-        <div class="theme">
-          <span class="idx">01</span>
-          <div>
-            <h3>Advanced Solar Cells</h3>
-            <p>Perovskite, organic and tandem architectures — pushing efficiency, stability and scalable manufacturing for next-generation photovoltaics.</p>
-          </div>
-        </div>
-        <div class="theme">
-          <span class="idx">02</span>
-          <div>
-            <h3>Photophysics &amp; Interfaces</h3>
-            <p>Charge extraction, grain boundaries and interfacial energetics that govern how these materials capture and move energy.</p>
-          </div>
-        </div>
+        <div class="theme"><span class="idx">01</span><div>
+          <h3>Advanced Solar Cells</h3>
+          <p>Perovskite, organic and tandem architectures — pushing efficiency, stability and scalable manufacturing for next-generation photovoltaics.</p>
+        </div></div>
+        <div class="theme"><span class="idx">02</span><div>
+          <h3>Photophysics &amp; Interfaces</h3>
+          <p>Charge extraction, grain boundaries and interfacial energetics that govern how these materials capture and move energy.</p>
+        </div></div>
       </div>
       <div class="reveal">
-        <div class="theme">
-          <span class="idx">03</span>
-          <div>
-            <h3>Solar Fuels &amp; Hydrogen</h3>
-            <p>Photoanodes, photocatalysts and water splitting that turn sunlight and water into hydrogen and value-added chemicals.</p>
-          </div>
-        </div>
-        <div class="theme">
-          <span class="idx">04</span>
-          <div>
-            <h3>Devices Beyond Solar</h3>
-            <p>Memristors, photodetectors and simulation approaches that carry these materials from the lab toward real application.</p>
-          </div>
-        </div>
+        <div class="theme"><span class="idx">03</span><div>
+          <h3>Solar Fuels &amp; Hydrogen</h3>
+          <p>Photoanodes, photocatalysts and water splitting that turn sunlight and water into hydrogen and value-added chemicals.</p>
+        </div></div>
+        <div class="theme"><span class="idx">04</span><div>
+          <h3>Devices Beyond Solar</h3>
+          <p>Memristors, photodetectors and simulation approaches that carry these materials from the lab toward real application.</p>
+        </div></div>
       </div>
     </div>
   </div>
@@ -376,19 +326,19 @@
     <p class="section-lead reveal">Invited lectures from leading groups across the UK, Korea, Taiwan and Europe.</p>
 
     <div class="spk-grid">
-      <div class="spk reveal"><div class="mono">JD</div><div class="slotmark">12:38</div><div class="name">Prof. James Robert Durrant</div><div class="inst">University of Oxford</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">JK</div><div class="slotmark">11:51</div><div class="name">Prof. Ji-Seon Kim</div><div class="inst">University of Oxford</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">TA</div><div class="slotmark">10:09</div><div class="name">Prof. Thomas Anthopoulos</div><div class="inst">Imperial College London</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">MM</div><div class="slotmark">09:51</div><div class="name">Prof. Martyn A. McLachlan</div><div class="inst">Imperial College London</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono">MD</div><div class="slotmark">09:05</div><div class="name">Dr. Matyas Daboczi</div><div class="inst">HUN-REN Centre for Energy Research</div><span class="cty">Hungary</span></div>
+      <div class="spk reveal"><div class="mono">CL</div><div class="slotmark">09:25</div><div class="name">Prof. Chiara Labanti</div><div class="inst">National Taiwan University</div><span class="cty">Taiwan</span></div>
+      <div class="spk reveal"><div class="mono">MM</div><div class="slotmark">09:45</div><div class="name">Prof. Martyn A. McLachlan</div><div class="inst">Imperial College London</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono">TA</div><div class="slotmark">10:05</div><div class="name">Prof. Thomas Anthopoulos</div><div class="inst">Imperial College London</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono">YH</div><div class="slotmark">10:55</div><div class="name">Dr. Yue Hu</div><div class="inst">University of Edinburgh</div><span class="cty">United Kingdom</span></div>
       <div class="spk reveal"><div class="mono">TM</div><div class="slotmark">11:15</div><div class="name">Prof. Tom Macdonald</div><div class="inst">University College London</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">HY</div><div class="slotmark">10:57</div><div class="name">Dr. Yue Hu</div><div class="inst">University of Edinburgh</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">MD</div><div class="slotmark">09:15</div><div class="name">Dr. Matyas Daboczi</div><div class="inst">HUN-REN Centre for Energy Research</div><span class="cty">Hungary</span></div>
-      <div class="spk reveal"><div class="mono">HC</div><div class="slotmark">12:56</div><div class="name">Prof. Hyojung Cha</div><div class="inst">Kyungpook National University</div><span class="cty">South Korea</span></div>
-      <div class="spk reveal"><div class="mono">JK</div><div class="slotmark">13:14</div><div class="name">Prof. Jaemin Kong</div><div class="inst">Gyeongsang National University</div><span class="cty">South Korea</span></div>
-      <div class="spk reveal"><div class="mono">LS</div><div class="slotmark tbc">Slot to be confirmed</div><div class="name">Prof. Ludmilla Steier</div><div class="inst">University of Oxford</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">BM</div><div class="slotmark tbc">Slot to be confirmed</div><div class="name">Dr. Benjamin Moss</div><div class="inst">Imperial College London</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">JL</div><div class="slotmark tbc">Slot to be confirmed</div><div class="name">Prof. Jinho Lee</div><div class="inst">Incheon National University</div><span class="cty">South Korea</span></div>
-      <div class="spk reveal"><div class="mono">CL</div><div class="slotmark tbc">Slot to be confirmed</div><div class="name">Prof. Chiara Labanti</div><div class="inst">National Taiwan University</div><span class="cty">Taiwan</span></div>
+      <div class="spk reveal"><div class="mono">LS</div><div class="slotmark">11:35</div><div class="name">Prof. Ludmilla Steier</div><div class="inst">University of Oxford</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono">JK</div><div class="slotmark">11:55</div><div class="name">Prof. Ji-Seon Kim</div><div class="inst">University of Oxford</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono">JD</div><div class="slotmark">13:15</div><div class="name">Prof. James Robert Durrant</div><div class="inst">University of Oxford</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono">HC</div><div class="slotmark">13:35</div><div class="name">Prof. Hyojung Cha</div><div class="inst">Kyungpook National University</div><span class="cty">South Korea</span></div>
+      <div class="spk reveal"><div class="mono">JK</div><div class="slotmark">13:55</div><div class="name">Prof. Jaemin Kong</div><div class="inst">Gyeongsang National University</div><span class="cty">South Korea</span></div>
+      <div class="spk reveal"><div class="mono">BM</div><div class="slotmark">14:15</div><div class="name">Dr. Benjamin Moss</div><div class="inst">University College London</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono">JL</div><div class="slotmark">14:35</div><div class="name">Prof. Jinho Lee</div><div class="inst">Incheon National University</div><span class="cty">South Korea</span></div>
     </div>
   </div>
 </section>
@@ -398,138 +348,312 @@
   <div class="section">
     <div class="eyebrow reveal">Programme</div>
     <h2 class="section-title reveal">Thursday, 5 November.</h2>
-    <p class="section-lead reveal">Twelve eighteen-minute talks, two breaks, one day. Doors at 09:00; group photo at 13:50.</p>
+    <p class="section-lead reveal">Thirteen twenty-minute talks, a coffee break and lunch. Doors at 09:00; group photo at 14:55. Talk titles will be announced closer to the event.</p>
 
     <div class="runsheet reveal">
+      <div class="slot mark"><div class="time">09:00&ndash;09:05</div><div><div class="who">Opening Remarks</div></div></div>
 
-      <div class="slot mark">
-        <div class="time">09:00&ndash;09:15</div>
-        <div><div class="who">Opening Remarks</div></div>
-      </div>
+      <div class="slot"><div class="time">09:05&ndash;09:25</div><div>
+        <div class="who">Dr. Matyas Daboczi</div>
+        <div class="aff">HUN-REN Centre for Energy Research · Hungary</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot">
-        <div class="time">09:15&ndash;09:33</div>
-        <div>
-          <div class="who">Dr. Matyas Daboczi</div>
-          <div class="aff">HUN-REN Centre for Energy Research · Hungary</div>
-          <div class="talk">Monolithic photoanodes of PTQ10:L8-BO with improved stability for solar water oxidation and enhanced unassisted water splitting</div>
-        </div>
-      </div>
+      <div class="slot"><div class="time">09:25&ndash;09:45</div><div>
+        <div class="who">Dr. Chiara Labanti</div>
+        <div class="aff">National Taiwan University · Taiwan</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot tbc">
-        <div class="time">09:33&ndash;09:51</div>
-        <div>
-          <div class="who">To be confirmed</div>
-          <div class="talk">Slot open following the speaker revision.</div>
-        </div>
-      </div>
+      <div class="slot"><div class="time">09:45&ndash;10:05</div><div>
+        <div class="who">Dr. Martyn A. McLachlan</div>
+        <div class="aff">Imperial College London · United Kingdom</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot">
-        <div class="time">09:51&ndash;10:09</div>
-        <div>
-          <div class="who">Dr. Martyn McLachlan</div>
-          <div class="aff">Imperial College London · United Kingdom</div>
-          <div class="talk">Vacancy-ordered double-perovskite-based memristors for image processing and pattern recognition</div>
-        </div>
-      </div>
+      <div class="slot"><div class="time">10:05&ndash;10:25</div><div>
+        <div class="who">Dr. Thomas Anthopoulos</div>
+        <div class="aff">Imperial College London · United Kingdom</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot">
-        <div class="time">10:09&ndash;10:27</div>
-        <div>
-          <div class="who">Dr. Thomas Anthopoulos</div>
-          <div class="aff">Imperial College London · United Kingdom</div>
-          <div class="talk">One-step formation of 2D/3D perovskite heterojunction via ligand intercalation and facet engineering for efficient perovskite solar cells</div>
-        </div>
-      </div>
+      <div class="slot pause"><div class="time">10:25&ndash;10:55</div><div><div class="who">Coffee Break</div></div></div>
 
-      <div class="slot pause">
-        <div class="time">10:27&ndash;10:57</div>
-        <div><div class="who">Break</div></div>
-      </div>
+      <div class="slot"><div class="time">10:55&ndash;11:15</div><div>
+        <div class="who">Dr. Yue Hu</div>
+        <div class="aff">University of Edinburgh · United Kingdom</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot">
-        <div class="time">10:57&ndash;11:15</div>
-        <div>
-          <div class="who">Dr. Yue Hu</div>
-          <div class="aff">University of Edinburgh · United Kingdom</div>
-          <div class="talk">In-depth review of multiphysics and circuit simulation approaches for perovskite solar cells</div>
-        </div>
-      </div>
+      <div class="slot"><div class="time">11:15&ndash;11:35</div><div>
+        <div class="who">Dr. Tom Macdonald</div>
+        <div class="aff">University College London · United Kingdom</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot">
-        <div class="time">11:15&ndash;11:33</div>
-        <div>
-          <div class="who">Dr. Tom Macdonald</div>
-          <div class="aff">University College London · United Kingdom</div>
-          <div class="talk">Unveiling the role of guanidinium for enhanced charge extraction in inverted perovskite solar cells</div>
-        </div>
-      </div>
+      <div class="slot"><div class="time">11:35&ndash;11:55</div><div>
+        <div class="who">Dr. Ludmilla Steier</div>
+        <div class="aff">University of Oxford · United Kingdom</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot tbc">
-        <div class="time">11:33&ndash;11:51</div>
-        <div>
-          <div class="who">To be confirmed</div>
-          <div class="talk">Slot open following the speaker revision.</div>
-        </div>
-      </div>
+      <div class="slot"><div class="time">11:55&ndash;12:15</div><div>
+        <div class="who">Dr. Ji-Seon Kim</div>
+        <div class="aff">University of Oxford · United Kingdom</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot">
-        <div class="time">11:51&ndash;12:09</div>
-        <div>
-          <div class="who">Dr. Ji-Seon Kim</div>
-          <div class="aff">University of Oxford · United Kingdom</div>
-          <div class="talk">Don't fluorinate there! The impact of fluorination position on polymer photostability and its effect on photovoltaic device stability</div>
-        </div>
-      </div>
+      <div class="slot pause"><div class="time">12:15&ndash;13:15</div><div><div class="who">Lunch Break</div></div></div>
 
-      <div class="slot pause">
-        <div class="time">12:09&ndash;12:38</div>
-        <div><div class="who">Break</div></div>
-      </div>
+      <div class="slot"><div class="time">13:15&ndash;13:35</div><div>
+        <div class="who">Dr. James Robert Durrant</div>
+        <div class="aff">University of Oxford · United Kingdom</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot">
-        <div class="time">12:38&ndash;12:56</div>
-        <div>
-          <div class="who">Dr. James Robert Durrant</div>
-          <div class="aff">University of Oxford · United Kingdom</div>
-          <div class="talk">Title to be confirmed</div>
-        </div>
-      </div>
+      <div class="slot"><div class="time">13:35&ndash;13:55</div><div>
+        <div class="who">Dr. Hyo Jung Cha</div>
+        <div class="aff">Kyungpook National University · South Korea</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot">
-        <div class="time">12:56&ndash;13:14</div>
-        <div>
-          <div class="who">Dr. Hyo Jung Cha</div>
-          <div class="aff">Kyungpook National University · South Korea</div>
-          <div class="talk">Design strategies, methods, and photophysical insights in polymeric photocatalysts for solar-driven hydrogen evolution</div>
-        </div>
-      </div>
+      <div class="slot"><div class="time">13:55&ndash;14:15</div><div>
+        <div class="who">Dr. Jaemin Kong</div>
+        <div class="aff">Gyeongsang National University · South Korea</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot">
-        <div class="time">13:14&ndash;13:32</div>
-        <div>
-          <div class="who">Dr. Jaemin Kong</div>
-          <div class="aff">Gyeongsang National University · South Korea</div>
-          <div class="talk">Machine-learning-guided high-throughput design of asymmetric A–DA'D–A acceptors toward efficient organic solar cells</div>
-        </div>
-      </div>
+      <div class="slot"><div class="time">14:15&ndash;14:35</div><div>
+        <div class="who">Dr. Benjamin Moss</div>
+        <div class="aff">University College London · United Kingdom</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot tbc">
-        <div class="time">13:32&ndash;13:50</div>
-        <div>
-          <div class="who">To be confirmed</div>
-          <div class="talk">Slot open following the speaker revision.</div>
-        </div>
-      </div>
+      <div class="slot"><div class="time">14:35&ndash;14:55</div><div>
+        <div class="who">Dr. Jinho Lee</div>
+        <div class="aff">Incheon National University · South Korea</div>
+        <div class="talk tbc">Title to be confirmed</div>
+      </div></div>
 
-      <div class="slot mark">
-        <div class="time">13:50&ndash;14:00</div>
-        <div><div class="who">Closing Discussion / Group Photo</div></div>
-      </div>
+      <div class="slot mark"><div class="time">14:55&ndash;15:00</div><div><div class="who">Closing Discussion / Group Photo</div></div></div>
+    </div>
+  </div>
+</section>
 
+<!-- ============ REGISTER ============ -->
+<section class="reg" id="register">
+  <div class="section">
+    <div class="eyebrow reveal">Registration</div>
+    <h2 class="section-title reveal">Attendance is free.</h2>
+    <p class="section-lead reveal">Places are limited. Invited speakers do not need to register. If you are presenting a poster, use the poster tab — it registers you to attend at the same time.</p>
+
+    <div class="capbar reveal">
+      <span class="cap" id="capReg"><span>Attendance</span> <b id="capRegNum">—</b> <span>/ 110</span></span>
+      <span class="cap" id="capPos"><span>Posters</span> <b id="capPosNum">—</b> <span>/ 20</span></span>
     </div>
 
-    <p class="prog-note">Ludmilla Steier, Benjamin Moss, Jinho Lee and Chiara Labanti are to be scheduled into the three open slots above.</p>
+    <div class="tabs reveal" role="tablist">
+      <button class="tab" id="tabA" role="tab" aria-selected="true" aria-controls="panelA">Attend</button>
+      <button class="tab" id="tabB" role="tab" aria-selected="false" aria-controls="panelB">Present a Poster</button>
+    </div>
+
+    <!-- ---------- PANEL A : ATTEND ---------- -->
+    <div class="panel" id="panelA" role="tabpanel" aria-labelledby="tabA">
+      <form id="formReg" novalidate>
+        <div class="fgrid">
+
+          <div class="f"><label for="r_name">Full name (English)<span class="req">*</span></label>
+            <input type="text" id="r_name" name="fullName" autocomplete="name" />
+            <span class="hint">As it should appear on your name badge.</span></div>
+
+          <div class="f"><label for="r_cn">Chinese name</label>
+            <input type="text" id="r_cn" name="chineseName" />
+            <span class="hint">Optional — leave blank if not applicable.</span></div>
+
+          <div class="f"><label for="r_email">Email<span class="req">*</span></label>
+            <input type="email" id="r_email" name="email" autocomplete="email" />
+            <span class="hint">Your confirmation will be sent here.</span></div>
+
+          <div class="f"><label for="r_mobile">Mobile phone<span class="req">*</span></label>
+            <input type="tel" id="r_mobile" name="mobile" autocomplete="tel" />
+            <span class="hint">Used only to reach you on the day.</span></div>
+
+          <div class="f"><label for="r_aff">Affiliation / Institution<span class="req">*</span></label>
+            <input type="text" id="r_aff" name="affiliation" autocomplete="organization" /></div>
+
+          <div class="f"><label for="r_dept">Department / Lab<span class="req">*</span></label>
+            <input type="text" id="r_dept" name="department" /></div>
+
+          <div class="f"><label for="r_pos">Position<span class="req">*</span></label>
+            <select id="r_pos" name="position">
+              <option value="">Please choose…</option>
+              <option>Undergraduate student</option>
+              <option>Master's student</option>
+              <option>PhD student</option>
+              <option>Postdoc</option>
+              <option>Faculty</option>
+              <option>Industry</option>
+              <option>Other</option>
+            </select></div>
+
+          <div class="f"><label for="r_diet">Dietary requirements<span class="req">*</span></label>
+            <select id="r_diet" name="dietary">
+              <option value="">Please choose…</option>
+              <option>None</option>
+              <option>Vegetarian</option>
+              <option>Halal</option>
+              <option>Other</option>
+            </select></div>
+
+          <div class="f wide" id="r_dietWrap" hidden><label for="r_dietDetail">Please specify</label>
+            <input type="text" id="r_dietDetail" name="dietaryDetail" />
+            <span class="hint">Allergies or anything else the caterer should know.</span></div>
+
+          <div class="f"><label for="r_cert">Certificate of attendance<span class="req">*</span></label>
+            <select id="r_cert" name="certificate">
+              <option value="">Please choose…</option>
+              <option>Yes, please</option>
+              <option>Not needed</option>
+            </select></div>
+
+          <div class="f"><label for="r_heard">How did you hear about this event?</label>
+            <select id="r_heard" name="heardFrom">
+              <option value="">Optional…</option>
+              <option>Poster or flyer</option>
+              <option>Email announcement</option>
+              <option>My supervisor or colleague</option>
+              <option>Social media</option>
+              <option>University website</option>
+              <option>Other</option>
+            </select></div>
+
+          <div class="checks">
+            <label class="chk"><input type="checkbox" id="r_photo" />
+              <span>I understand that photographs and a group photo will be taken during the symposium, and consent to their use in event records and promotional material.<span class="req"> *</span></span></label>
+            <label class="chk"><input type="checkbox" id="r_data" />
+              <span>I consent to National Chung Hsing University collecting and processing the information above for the purpose of organising this symposium.<span class="req"> *</span></span></label>
+          </div>
+
+          <div class="msg" id="msgReg" role="status" aria-live="polite"></div>
+
+          <div class="actions">
+            <button type="submit" class="submit" id="btnReg">Complete Registration</button>
+            <span class="note">Free of charge · No account needed</span>
+          </div>
+        </div>
+      </form>
+      <div class="done" id="doneReg" hidden></div>
+    </div>
+
+    <!-- ---------- PANEL B : POSTER ---------- -->
+    <div class="panel" id="panelB" role="tabpanel" aria-labelledby="tabB" hidden>
+      <form id="formPos" novalidate>
+        <div class="fgrid">
+
+          <div class="f"><label for="p_name">Presenting author (English)<span class="req">*</span></label>
+            <input type="text" id="p_name" name="fullName" autocomplete="name" /></div>
+
+          <div class="f"><label for="p_cn">Chinese name</label>
+            <input type="text" id="p_cn" name="chineseName" />
+            <span class="hint">Optional.</span></div>
+
+          <div class="f"><label for="p_email">Email<span class="req">*</span></label>
+            <input type="email" id="p_email" name="email" autocomplete="email" /></div>
+
+          <div class="f"><label for="p_mobile">Mobile phone<span class="req">*</span></label>
+            <input type="tel" id="p_mobile" name="mobile" autocomplete="tel" /></div>
+
+          <div class="f"><label for="p_aff">Affiliation / Institution<span class="req">*</span></label>
+            <input type="text" id="p_aff" name="affiliation" autocomplete="organization" /></div>
+
+          <div class="f"><label for="p_dept">Department / Lab<span class="req">*</span></label>
+            <input type="text" id="p_dept" name="department" /></div>
+
+          <div class="f"><label for="p_pos">Position<span class="req">*</span></label>
+            <select id="p_pos" name="position">
+              <option value="">Please choose…</option>
+              <option>Undergraduate student</option>
+              <option>Master's student</option>
+              <option>PhD student</option>
+              <option>Postdoc</option>
+              <option>Faculty</option>
+              <option>Industry</option>
+              <option>Other</option>
+            </select>
+            <span class="hint">Only students are eligible for the poster award.</span></div>
+
+          <div class="f"><label for="p_adv">Advisor / PI<span class="req">*</span></label>
+            <input type="text" id="p_adv" name="advisor" /></div>
+
+          <div class="f wide"><label for="p_title">Poster title<span class="req">*</span></label>
+            <input type="text" id="p_title" name="title" /></div>
+
+          <div class="f wide"><label for="p_co">Co-authors</label>
+            <textarea id="p_co" name="coAuthors" style="min-height:80px"></textarea>
+            <span class="hint">Optional. Format: Name¹, Name²; ¹Institution, ²Institution</span></div>
+
+          <div class="f wide">
+            <label for="p_abs">Abstract<span class="req">*</span></label>
+            <textarea id="p_abs" name="abstract" style="min-height:180px"></textarea>
+            <span class="counter" id="p_count">0 / 250 words</span>
+            <span class="hint">Plain text, 250 words maximum. This will be printed in the programme booklet exactly as submitted.</span>
+          </div>
+
+          <div class="f"><label for="p_topic">Topic<span class="req">*</span></label>
+            <select id="p_topic" name="topic">
+              <option value="">Please choose…</option>
+              <option>Advanced Solar Cells</option>
+              <option>Photophysics &amp; Interfaces</option>
+              <option>Solar Fuels &amp; Hydrogen</option>
+              <option>Devices Beyond Solar</option>
+            </select></div>
+
+          <div class="f"><label for="p_kw">Keywords<span class="req">*</span></label>
+            <input type="text" id="p_kw" name="keywords" />
+            <span class="hint">Three to five, separated by commas.</span></div>
+
+          <div class="f"><label for="p_diet">Dietary requirements<span class="req">*</span></label>
+            <select id="p_diet" name="dietary">
+              <option value="">Please choose…</option>
+              <option>None</option>
+              <option>Vegetarian</option>
+              <option>Halal</option>
+              <option>Other</option>
+            </select></div>
+
+          <div class="f"><label for="p_cert">Certificate of attendance<span class="req">*</span></label>
+            <select id="p_cert" name="certificate">
+              <option value="">Please choose…</option>
+              <option>Yes, please</option>
+              <option>Not needed</option>
+            </select></div>
+
+          <div class="f wide" id="p_dietWrap" hidden><label for="p_dietDetail">Please specify</label>
+            <input type="text" id="p_dietDetail" name="dietaryDetail" /></div>
+
+          <div class="checks">
+            <label class="chk"><input type="checkbox" id="p_award" />
+              <span>I would like to enter the poster award (students only).</span></label>
+            <label class="chk"><input type="checkbox" id="p_size" />
+              <span>I confirm my poster will be printed at <b>A0 portrait</b> (841 × 1189 mm). Boards and mounting materials are provided.<span class="req"> *</span></span></label>
+            <label class="chk"><input type="checkbox" id="p_pub" />
+              <span>I consent to my abstract being published in the programme booklet.<span class="req"> *</span></span></label>
+            <label class="chk"><input type="checkbox" id="p_photo" />
+              <span>I understand that photographs and a group photo will be taken during the symposium, and consent to their use in event records and promotional material.<span class="req"> *</span></span></label>
+            <label class="chk"><input type="checkbox" id="p_data" />
+              <span>I consent to National Chung Hsing University collecting and processing the information above for the purpose of organising this symposium.<span class="req"> *</span></span></label>
+          </div>
+
+          <div class="msg" id="msgPos" role="status" aria-live="polite"></div>
+
+          <div class="actions">
+            <button type="submit" class="submit" id="btnPos">Submit Poster</button>
+            <span class="note">This also registers you to attend</span>
+          </div>
+        </div>
+      </form>
+      <div class="done" id="donePos" hidden></div>
+    </div>
   </div>
 </section>
 
@@ -541,18 +665,17 @@
 
     <div class="venue-grid">
       <div class="vcard reveal">
-        <h3>International Conference Hall</h3>
-        <p>Chemical Material Building, B1</p>
-        <p class="han-addr">化工材料大樓 B1 國際會議廳</p>
-        <p>National Chung Hsing University, Taichung, Taiwan</p>
-        <p class="han-addr">國立中興大學 · 台中市</p>
+        <h3>B1 International Conference Hall</h3>
+        <p>Chemical Material Building</p>
+        <p>National Chung Hsing University</p>
+        <p>145 Xingda Road, South District, Taichung 402, Taiwan</p>
       </div>
       <div class="hosts reveal">
         <h4>Hosted &amp; Organised by</h4>
         <ul>
-          <li><span class="han">國立中興大學工學院</span><small>College of Engineering, NCHU</small></li>
-          <li><span class="han">永續農業創新發展中心</span><small>Center for Sustainable Agriculture Innovation &amp; Development</small></li>
-          <li><span class="han">化學工程學系</span><small>Department of Chemical Engineering, NCHU</small></li>
+          <li>College of Engineering, NCHU</li>
+          <li>Center for Sustainable Agriculture Innovation and Development, NCHU</li>
+          <li>Department of Chemical Engineering, NCHU</li>
         </ul>
       </div>
     </div>
@@ -561,40 +684,254 @@
 
 <footer>
   <div class="fbrand">Sustainable Solar &amp; Hydrogen Technologies</div>
-  <div class="fmeta han">次世代太陽能電池與氫能技術之永續能源應用研討會</div>
   <div class="fsmall">National Chung Hsing University · Taichung · 5 November 2026</div>
 </footer>
 
 <script>
-  var nav = document.getElementById('nav');
-  window.addEventListener('scroll', function(){
-    if(window.scrollY > 40){ nav.classList.add('solid'); } else { nav.classList.remove('solid'); }
-  }, {passive:true});
+/* ===================================================================
+   CONFIGURE ME — paste your Apps Script Web App URL between the quotes.
+   It looks like: https://script.google.com/macros/s/AKfy…/exec
+   =================================================================== */
+var ENDPOINT = '';
+/* =================================================================== */
 
-  var btn = document.getElementById('menuBtn');
-  var links = document.getElementById('links');
-  btn.addEventListener('click', function(){
-    var open = links.classList.toggle('open');
-    btn.classList.toggle('x', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  links.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      links.classList.remove('open'); btn.classList.remove('x');
-      btn.setAttribute('aria-expanded','false');
-    });
-  });
+var CAPS = { reg: 110, poster: 20 };
+var WORD_LIMIT = 250;
 
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!reduce && 'IntersectionObserver' in window){
-    document.documentElement.classList.add('js-reveal');
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-      });
-    }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
-    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+/* ---------- nav ---------- */
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){
+  nav.classList.toggle('solid', window.scrollY > 40);
+}, {passive:true});
+
+var btn = document.getElementById('menuBtn'), links = document.getElementById('links');
+btn.addEventListener('click', function(){
+  var open = links.classList.toggle('open');
+  btn.classList.toggle('x', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+links.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click', function(){
+    links.classList.remove('open'); btn.classList.remove('x');
+    btn.setAttribute('aria-expanded','false');
+  });
+});
+
+/* ---------- reveal ---------- */
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window){
+  document.documentElement.classList.add('js-reveal');
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+}
+
+/* ---------- tabs ---------- */
+var tabA = document.getElementById('tabA'), tabB = document.getElementById('tabB');
+var panelA = document.getElementById('panelA'), panelB = document.getElementById('panelB');
+function selectTab(which){
+  var a = which === 'A';
+  tabA.setAttribute('aria-selected', a); tabB.setAttribute('aria-selected', !a);
+  panelA.hidden = !a; panelB.hidden = a;
+}
+tabA.addEventListener('click', function(){ selectTab('A'); });
+tabB.addEventListener('click', function(){ selectTab('B'); });
+
+/* ---------- "Other" dietary reveals a detail field ---------- */
+function wireDiet(selectId, wrapId){
+  var sel = document.getElementById(selectId), wrap = document.getElementById(wrapId);
+  sel.addEventListener('change', function(){ wrap.hidden = sel.value !== 'Other'; });
+}
+wireDiet('r_diet','r_dietWrap');
+wireDiet('p_diet','p_dietWrap');
+
+/* ---------- abstract word counter ---------- */
+var absEl = document.getElementById('p_abs'), cntEl = document.getElementById('p_count');
+function words(t){ t = (t||'').trim(); return t ? t.split(/\s+/).length : 0; }
+absEl.addEventListener('input', function(){
+  var n = words(absEl.value);
+  cntEl.textContent = n + ' / ' + WORD_LIMIT + ' words';
+  cntEl.classList.toggle('over', n > WORD_LIMIT);
+  absEl.classList.toggle('bad', n > WORD_LIMIT);
+});
+
+/* ---------- live capacity ---------- */
+function paintCap(el, numEl, count, cap){
+  numEl.textContent = count;
+  el.classList.toggle('full', count >= cap);
+  if(count >= cap) numEl.textContent = cap;
+}
+function loadCaps(){
+  if(!ENDPOINT) return;
+  fetch(ENDPOINT).then(function(r){ return r.json(); }).then(function(d){
+    if(!d || !d.ok) return;
+    paintCap(document.getElementById('capReg'), document.getElementById('capRegNum'), d.registration.count, d.registration.cap);
+    paintCap(document.getElementById('capPos'), document.getElementById('capPosNum'), d.poster.count, d.poster.cap);
+    if(d.registration.full) note('msgReg','wait','<b>Attendance is full.</b> You can still submit this form — you will be added to the waitlist and contacted if a place opens up.');
+    if(d.poster.full) note('msgPos','wait','<b>The poster session is full.</b> You can still submit — you will be added to the waitlist.');
+  }).catch(function(){ /* capacity is a nicety; never block the form */ });
+}
+loadCaps();
+
+/* ---------- helpers ---------- */
+function val(id){ return (document.getElementById(id).value || '').trim(); }
+function checked(id){ return document.getElementById(id).checked; }
+function note(id, kind, html){
+  var m = document.getElementById(id);
+  m.className = 'msg show ' + kind; m.innerHTML = html;
+}
+function clearNote(id){ document.getElementById(id).className = 'msg'; }
+function mark(id, bad){ document.getElementById(id).classList.toggle('bad', bad); }
+function isEmail(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+
+function validate(fields, checks){
+  var firstBad = null;
+  fields.forEach(function(id){
+    var bad = !val(id);
+    if(id.indexOf('email') > -1 || id.slice(-6) === '_email') bad = !isEmail(val(id));
+    mark(id, bad);
+    if(bad && !firstBad) firstBad = id;
+  });
+  checks.forEach(function(id){
+    var bad = !checked(id);
+    mark(id, bad);
+    if(bad && !firstBad) firstBad = id;
+  });
+  return firstBad;
+}
+
+function post(payload){
+  return fetch(ENDPOINT, {
+    method: 'POST',
+    // text/plain keeps this a "simple request" — no CORS preflight, which
+    // Apps Script cannot answer.
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify(payload)
+  }).then(function(r){ return r.json(); });
+}
+
+function finish(panelFormId, doneId, html){
+  document.getElementById(panelFormId).hidden = true;
+  var d = document.getElementById(doneId);
+  d.hidden = false; d.innerHTML = html;
+  d.scrollIntoView({ behavior:'smooth', block:'center' });
+}
+
+/* ---------- submit: registration ---------- */
+document.getElementById('formReg').addEventListener('submit', function(ev){
+  ev.preventDefault();
+  clearNote('msgReg');
+
+  if(!ENDPOINT){
+    note('msgReg','err','This form is not connected yet. Paste your Apps Script Web App URL into the ENDPOINT variable at the top of the page script.');
+    return;
   }
+
+  var bad = validate(
+    ['r_name','r_email','r_mobile','r_aff','r_dept','r_pos','r_diet','r_cert'],
+    ['r_photo','r_data']
+  );
+  if(bad){
+    note('msgReg','err','Please complete the highlighted fields.');
+    document.getElementById(bad).focus();
+    return;
+  }
+
+  var b = document.getElementById('btnReg');
+  b.disabled = true; b.textContent = 'Sending…';
+
+  post({
+    action:'register',
+    fullName: val('r_name'), chineseName: val('r_cn'), email: val('r_email'),
+    mobile: val('r_mobile'), affiliation: val('r_aff'), department: val('r_dept'),
+    position: val('r_pos'), dietary: val('r_diet'), dietaryDetail: val('r_dietDetail'),
+    certificate: val('r_cert'), heardFrom: val('r_heard'),
+    photoConsent: true, dataConsent: true
+  }).then(function(d){
+    if(!d.ok){ note('msgReg','err', d.error || 'Something went wrong. Please try again.'); return; }
+
+    if(d.duplicate){
+      note('msgReg','wait','<b>You are already registered</b> with this email address. No need to submit again.');
+      return;
+    }
+    if(d.status === 'Waitlist'){
+      finish('formReg','doneReg',
+        '<div class="tick">◇</div><h3>You are on the waitlist</h3>' +
+        '<p>We have reached 110 attendees. We will email you the moment a place opens up.</p>' +
+        '<p>A confirmation has been sent to your inbox.</p>');
+    } else {
+      finish('formReg','doneReg',
+        '<div class="tick">✓</div><h3>Your place is confirmed</h3>' +
+        '<p>See you on Thursday, 5 November at National Chung Hsing University.</p>' +
+        '<p>A confirmation email is on its way.</p>');
+    }
+    loadCaps();
+  }).catch(function(){
+    note('msgReg','err','Could not reach the server. Please check your connection and try again.');
+  }).then(function(){
+    b.disabled = false; b.textContent = 'Complete Registration';
+  });
+});
+
+/* ---------- submit: poster ---------- */
+document.getElementById('formPos').addEventListener('submit', function(ev){
+  ev.preventDefault();
+  clearNote('msgPos');
+
+  if(!ENDPOINT){
+    note('msgPos','err','This form is not connected yet. Paste your Apps Script Web App URL into the ENDPOINT variable at the top of the page script.');
+    return;
+  }
+
+  var bad = validate(
+    ['p_name','p_email','p_mobile','p_aff','p_dept','p_pos','p_adv','p_title','p_abs','p_topic','p_kw','p_diet','p_cert'],
+    ['p_size','p_pub','p_photo','p_data']
+  );
+  if(bad){
+    note('msgPos','err','Please complete the highlighted fields.');
+    document.getElementById(bad).focus();
+    return;
+  }
+  if(words(absEl.value) > WORD_LIMIT){
+    note('msgPos','err','Your abstract is ' + words(absEl.value) + ' words. Please shorten it to ' + WORD_LIMIT + ' or fewer.');
+    absEl.focus();
+    return;
+  }
+
+  var b = document.getElementById('btnPos');
+  b.disabled = true; b.textContent = 'Sending…';
+
+  post({
+    action:'poster',
+    fullName: val('p_name'), chineseName: val('p_cn'), email: val('p_email'),
+    mobile: val('p_mobile'), affiliation: val('p_aff'), department: val('p_dept'),
+    position: val('p_pos'), advisor: val('p_adv'), title: val('p_title'),
+    coAuthors: val('p_co'), abstract: val('p_abs'), topic: val('p_topic'),
+    keywords: val('p_kw'), dietary: val('p_diet'), dietaryDetail: val('p_dietDetail'),
+    certificate: val('p_cert'),
+    awardEntry: checked('p_award'),
+    sizeConfirmed: true, publishConsent: true, photoConsent: true, dataConsent: true
+  }).then(function(d){
+    if(!d.ok){ note('msgPos','err', d.error || 'Something went wrong. Please try again.'); return; }
+
+    var head = d.status === 'Waitlist'
+      ? '<div class="tick">◇</div><h3>Your poster is on the waitlist</h3>' +
+        '<p>The poster session has reached 20. We will email you if a place opens up.</p>'
+      : '<div class="tick">✓</div><h3>Your poster is accepted</h3>' +
+        '<p>Please print it at A0 portrait (841 × 1189 mm). Boards are provided on the day.</p>';
+
+    var tail = d.registrationStatus === 'Waitlist'
+      ? '<p>Attendance is currently full, so your place to attend is on the waitlist too.</p>'
+      : '<p>You are also registered to attend — no need to fill in the other form.</p>';
+
+    finish('formPos','donePos', head + tail + '<p>A confirmation email is on its way.</p>');
+    loadCaps();
+  }).catch(function(){
+    note('msgPos','err','Could not reach the server. Please check your connection and try again.');
+  }).then(function(){
+    b.disabled = false; b.textContent = 'Submit Poster';
+  });
+});
 </script>
 </body>
 </html>
