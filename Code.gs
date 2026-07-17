@@ -21,6 +21,15 @@
 
 const CONFIG = {
 
+  // ---- Spreadsheet --------------------------------------------------------
+  // Leave as '' if this script was opened via Extensions → Apps Script from
+  // INSIDE the spreadsheet (the normal, recommended way — see SETUP.md).
+  // If you instead created this as a separate/standalone script, paste the
+  // spreadsheet's ID here. Find it in the sheet's URL, the long string
+  // between /d/ and /edit:
+  //   https://docs.google.com/spreadsheets/d/```1AbCdEfGhIjKlMnOpQrStUvWxYz```/edit
+  SPREADSHEET_ID: '',
+
   // ---- Caps -------------------------------------------------------------
   REGISTRATION_CAP: 110,
   POSTER_CAP: 20,
@@ -347,8 +356,23 @@ function row(label, value) {
 
 /* ------------------------------ HELPERS ----------------------------------- */
 
-function sheet(name, headers) {
+function getSpreadsheet_() {
+  if (CONFIG.SPREADSHEET_ID) {
+    return SpreadsheetApp.openById(CONFIG.SPREADSHEET_ID);
+  }
   const ss = SpreadsheetApp.getActiveSpreadsheet();
+  if (!ss) {
+    throw new Error(
+      'This script is not connected to a spreadsheet. Either open it via ' +
+      'Extensions → Apps Script from inside your Google Sheet, or paste the ' +
+      'sheet\'s ID into CONFIG.SPREADSHEET_ID at the top of Code.gs.'
+    );
+  }
+  return ss;
+}
+
+function sheet(name, headers) {
+  const ss = getSpreadsheet_();
   let sh = ss.getSheetByName(name);
   if (!sh) {
     sh = ss.insertSheet(name);
@@ -442,11 +466,42 @@ function setup() {
   sheet(REG_SHEET, REG_HEADERS);
   sheet(POSTER_SHEET, POSTER_HEADERS);
   MailApp.getRemainingDailyQuota();   // forces the Gmail permission prompt
-  SpreadsheetApp.getUi().alert(
-    'Setup complete.\n\n' +
-    'Sheets ready: "' + REG_SHEET + '" and "' + POSTER_SHEET + '".\n' +
-    'Now deploy: Deploy → New deployment → Web app.'
-  );
+
+  const ss = getSpreadsheet_();
+  Logger.log('Setup complete.');
+  Logger.log('Spreadsheet: ' + ss.getName() + ' — ' + ss.getUrl());
+  Logger.log('Sheets ready: "' + REG_SHEET + '" and "' + POSTER_SHEET + '".');
+  Logger.log('Next: Deploy → New deployment → Web app.');
+
+  // Also try a UI alert — this only works if the script is bound and being
+  // run from inside the spreadsheet, so it may silently do nothing. That's
+  // fine; the Logger lines above (View → Logs, or Ctrl/Cmd+Enter) are the
+  // reliable place to check.
+  try {
+    SpreadsheetApp.getUi().alert(
+      'Setup complete.\n\n' +
+      'Spreadsheet: ' + ss.getName() + '\n' +
+      'Sheets ready: "' + REG_SHEET + '" and "' + POSTER_SHEET + '".\n' +
+      'Now deploy: Deploy → New deployment → Web app.'
+    );
+  } catch (ignore) {
+    // No UI available (standalone script, or run outside the container). Not an error.
+  }
+}
+
+/**
+ * Run this to double-check which spreadsheet this script is currently
+ * pointed at, before you rely on it. Check View → Logs (or Ctrl/Cmd+Enter)
+ * after running.
+ */
+function whichSpreadsheet() {
+  try {
+    const ss = getSpreadsheet_();
+    Logger.log('Connected to: ' + ss.getName());
+    Logger.log('URL: ' + ss.getUrl());
+  } catch (err) {
+    Logger.log('NOT CONNECTED: ' + err.message);
+  }
 }
 
 /**
