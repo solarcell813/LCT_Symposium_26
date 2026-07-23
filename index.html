@@ -86,10 +86,11 @@
 
   /* speakers */
   #speakers{background:var(--section-tint)}
-  .spk-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:16px 22px;margin-top:56px}
+  .spk-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px 22px;margin-top:56px}
   .spk{position:relative;padding:34px 24px 30px;text-align:center;border:1px solid var(--hairline);border-radius:3px;background:#fff;box-shadow:0 1px 4px rgba(20,48,42,.05);transition:transform .35s,border-color .35s,box-shadow .35s}
   .spk:hover{transform:translateY(-6px);border-color:rgba(227,164,44,.5);box-shadow:0 10px 22px rgba(20,48,42,.1)}
   .mono{width:92px;height:92px;margin:0 auto 20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:600;font-size:1.85rem;background:radial-gradient(circle at 32% 28%,rgba(242,194,100,.28),transparent 60%),linear-gradient(150deg,#1f463d,#0f2621);box-shadow:0 0 0 1px var(--hairline-strong),0 6px 16px rgba(20,48,42,.14);position:relative}
+  .mono img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
   .mono::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid transparent;transition:border-color .35s}
   .spk:hover .mono::after{border-color:rgba(227,164,44,.6)}
   .spk .slotmark{font-family:var(--caps);font-size:.62rem;letter-spacing:.2em;color:var(--gold-ink);text-transform:uppercase}
@@ -220,6 +221,7 @@
     .hero-inner{grid-template-columns:1fr;gap:44px;padding-top:120px}
     .datecard{border-left:none;border-top:1px solid var(--line-strong);padding-left:0;padding-top:30px}
     .about-grid,.venue-grid,.fgrid{grid-template-columns:1fr}
+    .spk-grid{grid-template-columns:repeat(3,1fr)}
     .hosts{border-left:none;border-top:1px solid var(--hairline-strong);padding-left:0;padding-top:30px}
     .tabs{border-bottom:none;flex-direction:column;gap:2px}
     .tab{text-align:left;padding:14px 0;border-bottom:1px solid var(--hairline)}
@@ -238,6 +240,7 @@
     .hero-inner{padding:110px 24px 80px}
     .slot{grid-template-columns:1fr;gap:6px}
     .slot .time{padding-top:0}
+    .spk-grid{grid-template-columns:repeat(2,1fr)}
   }
 </style>
 </head>
@@ -333,19 +336,19 @@
     <p class="section-lead reveal">Invited lectures from leading groups across the UK, Korea, Taiwan and Europe.</p>
 
     <div class="spk-grid">
-      <div class="spk reveal"><div class="mono">MD</div><div class="slotmark">09:05</div><div class="name">Dr. Matyas Daboczi</div><div class="inst">HUN-REN Centre for Energy Research</div><span class="cty">Hungary</span></div>
-      <div class="spk reveal"><div class="mono">CL</div><div class="slotmark">09:25</div><div class="name">Prof. Chiara Labanti</div><div class="inst">National Taiwan University</div><span class="cty">Taiwan</span></div>
-      <div class="spk reveal"><div class="mono">MM</div><div class="slotmark">09:45</div><div class="name">Prof. Martyn A. McLachlan</div><div class="inst">Imperial College London</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">TA</div><div class="slotmark">10:05</div><div class="name">Prof. Thomas Anthopoulos</div><div class="inst">Imperial College London</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">YH</div><div class="slotmark">10:55</div><div class="name">Dr. Yue Hu</div><div class="inst">University of Edinburgh</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">TM</div><div class="slotmark">11:15</div><div class="name">Prof. Tom Macdonald</div><div class="inst">University College London</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">LS</div><div class="slotmark">11:35</div><div class="name">Prof. Ludmilla Steier</div><div class="inst">University of Oxford</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">JK</div><div class="slotmark">11:55</div><div class="name">Prof. Ji-Seon Kim</div><div class="inst">University of Oxford</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">JD</div><div class="slotmark">13:15</div><div class="name">Prof. James Robert Durrant</div><div class="inst">University of Oxford</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">HC</div><div class="slotmark">13:35</div><div class="name">Prof. Hyojung Cha</div><div class="inst">Kyungpook National University</div><span class="cty">South Korea</span></div>
-      <div class="spk reveal"><div class="mono">JK</div><div class="slotmark">13:55</div><div class="name">Prof. Jaemin Kong</div><div class="inst">Gyeongsang National University</div><span class="cty">South Korea</span></div>
-      <div class="spk reveal"><div class="mono">BM</div><div class="slotmark">14:15</div><div class="name">Dr. Benjamin Moss</div><div class="inst">University College London</div><span class="cty">United Kingdom</span></div>
-      <div class="spk reveal"><div class="mono">JL</div><div class="slotmark">14:35</div><div class="name">Prof. Jinho Lee</div><div class="inst">Incheon National University</div><span class="cty">South Korea</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/Dr%20Matyas%20Daboczi.jpg" alt="Dr. Matyas Daboczi" loading="lazy"></div><div class="slotmark">09:05</div><div class="name">Dr. Matyas Daboczi</div><div class="inst">HUN-REN Centre for Energy Research</div><span class="cty">Hungary</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/Dr%20Chiara%20Labanti.jpg" alt="Prof. Chiara Labanti" loading="lazy"></div><div class="slotmark">09:25</div><div class="name">Prof. Chiara Labanti</div><div class="inst">National Taiwan University</div><span class="cty">Taiwan</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/Martyn.jpg" alt="Prof. Martyn A. McLachlan" loading="lazy"></div><div class="slotmark">09:45</div><div class="name">Prof. Martyn A. McLachlan</div><div class="inst">Imperial College London</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/Thomas%20Anthopoulos.png" alt="Prof. Thomas Anthopoulos" loading="lazy"></div><div class="slotmark">10:05</div><div class="name">Prof. Thomas Anthopoulos</div><div class="inst">Imperial College London</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/Yue%20Hu.jpg" alt="Dr. Yue Hu" loading="lazy"></div><div class="slotmark">10:55</div><div class="name">Dr. Yue Hu</div><div class="inst">University of Edinburgh</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/Tom%20Macdonald.png" alt="Prof. Tom Macdonald" loading="lazy"></div><div class="slotmark">11:15</div><div class="name">Prof. Tom Macdonald</div><div class="inst">University College London</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/Ludmilla%20Steier.jpg" alt="Prof. Ludmilla Steier" loading="lazy"></div><div class="slotmark">11:35</div><div class="name">Prof. Ludmilla Steier</div><div class="inst">University of Oxford</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/Ji-Seon%20Kim.jpg" alt="Prof. Ji-Seon Kim" loading="lazy"></div><div class="slotmark">11:55</div><div class="name">Prof. Ji-Seon Kim</div><div class="inst">University of Oxford</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/James%20Robert%20Durrant.jpg" alt="Prof. James Robert Durrant" loading="lazy"></div><div class="slotmark">13:15</div><div class="name">Prof. James Robert Durrant</div><div class="inst">University of Oxford</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/Hyo%20Jung%20Cha.jpg" alt="Prof. Hyojung Cha" loading="lazy"></div><div class="slotmark">13:35</div><div class="name">Prof. Hyojung Cha</div><div class="inst">Kyungpook National University</div><span class="cty">South Korea</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/Jaemin%20Kong.jpg" alt="Prof. Jaemin Kong" loading="lazy"></div><div class="slotmark">13:55</div><div class="name">Prof. Jaemin Kong</div><div class="inst">Gyeongsang National University</div><span class="cty">South Korea</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/Benjamin%20Moss.jpg" alt="Dr. Benjamin Moss" loading="lazy"></div><div class="slotmark">14:15</div><div class="name">Dr. Benjamin Moss</div><div class="inst">University College London</div><span class="cty">United Kingdom</span></div>
+      <div class="spk reveal"><div class="mono"><img src="asset/Jinho%20Lee.jpg" alt="Prof. Jinho Lee" loading="lazy"></div><div class="slotmark">14:35</div><div class="name">Prof. Jinho Lee</div><div class="inst">Incheon National University</div><span class="cty">South Korea</span></div>
     </div>
   </div>
 </section>
@@ -639,7 +642,7 @@
     <div class="venue-grid">
       <div class="vcard reveal">
         <h3>B1 International Conference Hall</h3>
-        <p>Chemical Material Building</p>
+        <p>Applied Technology Building</p>
         <p>National Chung Hsing University</p>
         <p>145 Xingda Road, South District, Taichung 402, Taiwan</p>
       </div>
