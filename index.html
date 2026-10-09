@@ -450,7 +450,7 @@
     }
 
     .spk-grid {
-      --cols: 5;
+      --cols: 4;
       --gap: 22px;
       display: flex;
       flex-wrap: wrap;
@@ -1067,6 +1067,67 @@
       color: var(--ink-dim)
     }
 
+    .org-sec {
+      background: var(--section-bg);
+      border-top: 1px solid var(--hairline)
+    }
+
+    .org-label {
+      font-family: var(--caps);
+      font-size: .68rem;
+      letter-spacing: .22em;
+      color: var(--gold-ink);
+      text-transform: uppercase;
+      text-align: center;
+      margin: 56px 0 0
+    }
+
+    .org-cards {
+      margin-top: 24px
+    }
+
+    .org-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      gap: 40px;
+      margin-top: 60px;
+      padding-top: 44px;
+      border-top: 1px solid var(--hairline-strong)
+    }
+
+    .org-grid-one {
+      grid-template-columns: 1fr
+    }
+
+    .org h4 {
+      font-family: var(--caps);
+      font-size: .68rem;
+      letter-spacing: .22em;
+      color: var(--gold-ink);
+      text-transform: uppercase;
+      margin-bottom: 16px
+    }
+
+    .org ul {
+      list-style: none
+    }
+
+    .org li {
+      padding: 9px 0;
+      border-bottom: 1px solid var(--hairline);
+      font-size: 1rem;
+      color: var(--ink-dim)
+    }
+
+    .org .cols {
+      columns: 2;
+      column-gap: 40px
+    }
+
+    .org .cols li {
+      break-inside: avoid
+    }
+
     footer {
       background: var(--section-tint);
       border-top: 1px solid var(--hairline);
@@ -1170,6 +1231,11 @@
 
       .hosts li {
         white-space: normal
+      }
+
+      .org-grid {
+        grid-template-columns: 1fr;
+        gap: 30px
       }
 
       .tabs {
@@ -1367,86 +1433,118 @@
     </div>
   </section>
 
+  <!-- ============ ORGANISERS ============ -->
+  <section class="org-sec" id="organisers">
+    <div class="section">
+      <div class="eyebrow reveal">The people behind the symposium.</div>
+      <h2 class="section-title reveal">Organisers</h2>
+
+      <h4 class="org-label reveal">Symposium Chair</h4>
+      <div class="spk-grid org-cards">
+        <div class="spk reveal">
+          <div class="mono"><img src="asset/Chieh-Ting%20Lin.jpg" style="object-position:45% 36%" alt="Chieh-Ting Lin"
+              loading="lazy"></div>
+          <div class="name">Chieh-Ting Lin</div>
+          <div class="inst">National Chung Hsing University</div><span class="cty">Taiwan</span>
+        </div>
+      </div>
+
+      <h4 class="org-label reveal">Organising Committee</h4>
+      <div class="spk-grid org-cards">
+        <div class="spk reveal">
+          <div class="mono"><img src="asset/Martyn.jpg" style="object-position:50% 8%" alt="Martyn A. McLachlan"
+              loading="lazy"></div>
+          <div class="name">Martyn A. McLachlan</div>
+          <div class="inst">Imperial College London</div><span class="cty">United Kingdom</span>
+        </div>
+        <div class="spk reveal">
+          <div class="mono"><img src="asset/Thomas%20Anthopoulos.png" alt="Thomas Anthopoulos" loading="lazy"></div>
+          <div class="name">Thomas Anthopoulos</div>
+          <div class="inst">Imperial College London</div><span class="cty">United Kingdom</span>
+        </div>
+        <div class="spk reveal">
+          <div class="mono"><img src="asset/James%20Robert%20Durrant.jpg" style="object-position:center top"
+              alt="James Robert Durrant" loading="lazy"></div>
+          <div class="name">James Robert Durrant</div>
+          <div class="inst">University of Oxford</div><span class="cty">United Kingdom</span>
+        </div>
+        <div class="spk reveal">
+          <div class="mono"><img src="asset/Ji-Seon%20Kim.jpg" alt="Ji-Seon Kim" loading="lazy"></div>
+          <div class="name">Ji-Seon Kim</div>
+          <div class="inst">University of Oxford</div><span class="cty">United Kingdom</span>
+        </div>
+        <div class="spk reveal">
+          <div class="mono"><img src="asset/Chih-Ming%20Chen.jpeg" alt="Chih-Ming Chen" loading="lazy"></div>
+          <div class="name">Chih-Ming Chen</div>
+          <div class="inst">National Chung Hsing University</div><span class="cty">Taiwan</span>
+        </div>
+        <div class="spk reveal">
+          <div class="mono"><img src="asset/Chien-Chung%20Shih.png" style="object-position:50% 5%"
+              alt="Chien-Chung Shih" loading="lazy"></div>
+          <div class="name">Chien-Chung Shih</div>
+          <div class="inst">National Chung Hsing University</div><span class="cty">Taiwan</span>
+        </div>
+        <div class="spk reveal">
+          <div class="mono"><img src="asset/Fan-Wei%20Liu.jpg" style="object-position:50% 5%" alt="Fan-Wei Liu"
+              loading="lazy"></div>
+          <div class="name">Fan-Wei Liu</div>
+          <div class="inst">National Chung Hsing University</div><span class="cty">Taiwan</span>
+        </div>
+        <div class="spk reveal">
+          <div class="mono"><img src="asset/Tsung-Han%20Liu_web.jpg" alt="Tsung-Han Liu" loading="lazy"></div>
+          <div class="name">Tsung-Han Liu</div>
+          <div class="inst">National Chung Hsing University</div><span class="cty">Taiwan</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ SPEAKERS ============ -->
   <section id="speakers">
     <div class="section">
-      <div class="eyebrow reveal">Invited Speakers</div>
-      <h2 class="section-title reveal">Twelve voices in<br>next-generation energy.</h2>
+      <div class="eyebrow reveal">Invited voices in next-generation energy</div>
+      <h2 class="section-title reveal">Invited Speakers</h2>
       <p class="section-lead reveal">Invited lectures from leading groups across the UK, Korea, Taiwan and Europe.</p>
 
       <div class="spk-grid">
         <div class="spk reveal">
           <div class="mono"><img src="asset/Dr%20Matyas%20Daboczi.jpg" alt="Matyas Daboczi" loading="lazy"></div>
-          <div class="slotmark">09:05</div>
           <div class="name">Matyas Daboczi</div>
           <div class="inst">HUN-REN Centre for Energy Research</div><span class="cty">Hungary</span>
         </div>
         <div class="spk reveal">
           <div class="mono"><img src="asset/Tzu-Chien%20Wei_web.jpg" alt="Tzu-Chien Wei" loading="lazy"></div>
-          <div class="slotmark">09:25</div>
           <div class="name">Tzu-Chien Wei</div>
           <div class="inst">National Tsing Hua University</div><span class="cty">Taiwan</span>
         </div>
         <div class="spk reveal">
-          <div class="mono"><img src="asset/Martyn.jpg" alt="Martyn A. McLachlan" loading="lazy"></div>
-          <div class="slotmark">09:45</div>
-          <div class="name">Martyn A. McLachlan</div>
-          <div class="inst">Imperial College London</div><span class="cty">United Kingdom</span>
-        </div>
-        <div class="spk reveal">
-          <div class="mono"><img src="asset/Thomas%20Anthopoulos.png" alt="Thomas Anthopoulos" loading="lazy">
-          </div>
-          <div class="slotmark">10:05</div>
-          <div class="name">Thomas Anthopoulos</div>
-          <div class="inst">Imperial College London</div><span class="cty">United Kingdom</span>
-        </div>
-        <div class="spk reveal">
           <div class="mono"><img src="asset/Tom%20Macdonald.png" alt="Tom Macdonald" loading="lazy"></div>
-          <div class="slotmark">10:55</div>
           <div class="name">Tom Macdonald</div>
           <div class="inst">University College London</div><span class="cty">United Kingdom</span>
         </div>
         <div class="spk reveal">
           <div class="mono"><img src="asset/Jaemin%20Kong.jpg" alt="Jaemin Kong" loading="lazy"></div>
-          <div class="slotmark">11:15</div>
           <div class="name">Jaemin Kong</div>
           <div class="inst">Gyeongsang National University</div><span class="cty">South Korea</span>
         </div>
         <div class="spk reveal">
-          <div class="mono"><img src="asset/Ji-Seon%20Kim.jpg" alt="Ji-Seon Kim" loading="lazy"></div>
-          <div class="slotmark">11:35</div>
-          <div class="name">Ji-Seon Kim</div>
-          <div class="inst">University of Oxford</div><span class="cty">United Kingdom</span>
-        </div>
-        <div class="spk reveal">
           <div class="mono"><img src="asset/SHUN-WEI%20LIU.png" alt="Shun-Wei Liu" loading="lazy"></div>
-          <div class="slotmark">11:55</div>
           <div class="name">Shun-Wei Liu</div>
           <div class="inst">Ming Chi University of Technology</div><span class="cty">Taiwan</span>
         </div>
         <div class="spk reveal">
-          <div class="mono"><img src="asset/James%20Robert%20Durrant.jpg" style="object-position:center top"
-              alt="James Robert Durrant" loading="lazy"></div>
-          <div class="slotmark">13:35</div>
-          <div class="name">James Robert Durrant</div>
-          <div class="inst">University of Oxford</div><span class="cty">United Kingdom</span>
-        </div>
-        <div class="spk reveal">
           <div class="mono"><img src="asset/Hyo%20Jung%20Cha.jpg" style="object-position:center top" alt="Hyojung Cha"
               loading="lazy"></div>
-          <div class="slotmark">13:55</div>
           <div class="name">Hyojung Cha</div>
           <div class="inst">Kyungpook National University</div><span class="cty">South Korea</span>
         </div>
         <div class="spk reveal">
           <div class="mono"><img src="asset/Ludmilla%20Steier.jpg" alt="Ludmilla Steier" loading="lazy"></div>
-          <div class="slotmark">14:15</div>
           <div class="name">Ludmilla Steier</div>
           <div class="inst">University of Oxford</div><span class="cty">United Kingdom</span>
         </div>
         <div class="spk reveal">
           <div class="mono"><img src="asset/Jinho%20Lee.jpg" alt="Jinho Lee" loading="lazy"></div>
-          <div class="slotmark">14:35</div>
           <div class="name">Jinho Lee</div>
           <div class="inst">Incheon National University</div><span class="cty">South Korea</span>
         </div>
@@ -1842,6 +1940,16 @@
             <li>Innovation and Development Center of Sustainable Agriculture, NCHU</li>
             <li>Smart Sustainable New Agriculture Research Center, NCHU</li>
             <li>Department of Chemical Engineering, NCHU</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="org-grid org-grid-one">
+        <div class="org reveal">
+          <h4>Conference Managers</h4>
+          <ul>
+            <li>Yun-Shan Li</li>
+            <li>Kai-Chun Chang</li>
           </ul>
         </div>
       </div>
