@@ -564,6 +564,30 @@
       border-top: 1px solid var(--hairline-strong)
     }
 
+    .day-head {
+      font-family: var(--display);
+      font-weight: 600;
+      font-size: 1.6rem;
+      margin-top: 54px
+    }
+
+    .day-head span {
+      font-family: var(--caps);
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold-ink);
+      margin-right: 14px
+    }
+
+    .day-head + .runsheet {
+      margin-top: 18px
+    }
+
+    .day-head:first-of-type {
+      margin-top: 40px
+    }
+
     .slot {
       display: grid;
       grid-template-columns: 118px 1fr;
@@ -1367,7 +1391,7 @@
     <nav class="links" id="links">
       <a href="#about">About</a>
       <a href="#speakers">Speakers</a>
-      <a href="#programme">Programme</a>
+      <a href="#programme">Agenda</a>
       <a href="#venue">Venue</a>
       <a class="pill" href="#register">Register</a>
     </nav>
@@ -1537,9 +1561,20 @@
   <section class="prog" id="programme">
     <div class="section">
       <div class="eyebrow reveal">Programme</div>
-      <h2 class="section-title reveal">Thursday, 5 November.</h2>
+      <h2 class="section-title reveal">Conference Agenda</h2>
 
-      <div class="runsheet reveal">
+      <h3 class="day-head reveal"><span>Day 1</span> Wednesday, 4 November</h3>
+      <div class="runsheet day1 reveal">
+        <div class="slot mark">
+          <div class="time">16:00</div>
+          <div>
+            <div class="who">Professors&rsquo; Roundtable</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="day-head reveal"><span>Day 2</span> Thursday, 5 November</h3>
+      <div class="runsheet day2 reveal">
         <div class="slot mark">
           <div class="time">09:00&ndash;09:05</div>
           <div>
@@ -1683,6 +1718,14 @@
           <div class="time">14:55&ndash;15:00</div>
           <div>
             <div class="who">Closing Discussion / Group Photo</div>
+          </div>
+        </div>
+
+        <div class="slot">
+          <div class="time">15:00&ndash;15:30</div>
+          <div>
+            <div class="who">Where AI Meets Agriculture: A Greenhouse Expedition</div>
+            <div class="talk">Smart Greenhouse Discovery Tour</div>
           </div>
         </div>
       </div>
