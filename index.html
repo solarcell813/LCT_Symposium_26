@@ -965,6 +965,40 @@
       transform: translateY(-1px)
     }
 
+    .agenda-head {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px 36px;
+      margin-bottom: 14px
+    }
+
+    .agenda-head .section-title {
+      margin-bottom: 0
+    }
+
+    .agenda-dl {
+      display: inline-block;
+      white-space: nowrap;
+      font-family: var(--caps);
+      font-size: .74rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      background: var(--gold);
+      color: var(--bg-2);
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      padding: 14px 34px;
+      transition: background .25s, transform .2s
+    }
+
+    .agenda-dl:hover,
+    .agenda-dl:focus-visible {
+      background: var(--gold-2);
+      border-color: var(--gold-2);
+      transform: translateY(-1px)
+    }
+
     .submit:disabled {
       opacity: .5;
       cursor: not-allowed
@@ -1561,7 +1595,10 @@
   <section class="prog" id="programme">
     <div class="section">
       <div class="eyebrow reveal">Programme</div>
-      <h2 class="section-title reveal">Conference Agenda</h2>
+      <div class="agenda-head reveal">
+        <h2 class="section-title">Conference Agenda</h2>
+        <a class="agenda-dl" href="ISSEA26_Conference_Agenda.pdf" download>Download Agenda (PDF)</a>
+      </div>
 
       <h3 class="day-head reveal"><span>Day 1</span> Wednesday, 4 November</h3>
       <div class="runsheet day1 reveal">
