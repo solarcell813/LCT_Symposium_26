@@ -1134,6 +1134,32 @@
       color: var(--ink-dim)
     }
 
+    .venue-map {
+      margin-top: 44px
+    }
+
+    .venue-map iframe {
+      display: block;
+      width: 100%;
+      height: 400px;
+      border: 1px solid var(--hairline-strong);
+      border-radius: 3px
+    }
+
+    .map-link {
+      display: inline-block;
+      margin-top: 14px;
+      font-family: var(--caps);
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--gold-ink)
+    }
+
+    .map-link:hover {
+      text-decoration: underline
+    }
+
     .org-title {
       font-family: var(--display);
       font-weight: 600;
@@ -1436,7 +1462,7 @@
       <a href="#speakers">Speakers</a>
       <a href="#programme">Agenda</a>
       <a href="#venue">Venue</a>
-      <a class="pill" href="#register">Register</a>
+      <a class="pill" href="#register">Registration</a>
     </nav>
   </header>
 
@@ -1461,7 +1487,7 @@
             Technologies</span>
         </h1>
         <div class="hero-meta">
-          <a class="ghost solid" href="#register">Register &mdash; Free</a>
+          <a class="ghost solid" href="#register">Registration Closed</a>
           <a class="ghost" href="#programme">One Day · Twelve Talks</a>
         </div>
       </div>
@@ -1802,10 +1828,11 @@
   <section class="reg" id="register">
     <div class="section">
       <div class="eyebrow reveal">Registration</div>
-      <h2 class="section-title reveal">Attendance is free.</h2>
-      <p class="section-lead reveal">Places are limited. Invited speakers do not need to register. If you are presenting
-        a poster, use the poster tab — it registers you to attend at the same time.</p>
+      <h2 class="section-title reveal">Registration is now closed.</h2>
+      <p class="section-lead reveal">Thank you for your interest in the symposium. Online registration for attendance
+        and the poster session has closed. We look forward to seeing everyone registered on 5 November.</p>
 
+      <div class="reg-forms" hidden>
       <div class="capbar reveal">
         <span class="cap" id="capReg"><span>Attendance</span> <b id="capRegNum">—</b> <span>/ 110</span></span>
         <span class="cap" id="capPos"><span>Posters</span> <b id="capPosNum">—</b> <span>/ 20</span></span>
@@ -2008,6 +2035,7 @@
         </form>
         <div class="done" id="donePos" hidden></div>
       </div>
+      </div><!-- /.reg-forms -->
     </div>
   </section>
 
@@ -2033,6 +2061,14 @@
             <li>Department of Chemical Engineering, NCHU</li>
           </ul>
         </div>
+      </div>
+
+      <div class="venue-map reveal">
+        <iframe title="Map: B1 International Conference Hall, Applied Science &amp; Technology Building, NCHU"
+          src="https://maps.google.com/maps?q=24.121722,120.676028&amp;z=17&amp;hl=en&amp;output=embed" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=24.121722,120.676028"
+          target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
       </div>
 
       <h3 class="org-title reveal">Organisers</h3>
@@ -2168,8 +2204,10 @@
       el.classList.toggle('full', count >= cap);
       if (count >= cap) numEl.textContent = cap;
     }
+    var REG_CLOSED = true; /* set to false to re-open registration (also unhide .reg-forms) */
+
     function loadCaps() {
-      if (!ENDPOINT) return;
+      if (!ENDPOINT || REG_CLOSED) return;
       fetch(ENDPOINT).then(function (r) { return r.json(); }).then(function (d) {
         if (!d || !d.ok) return;
         paintCap(document.getElementById('capReg'), document.getElementById('capRegNum'), d.registration.count, d.registration.cap);
